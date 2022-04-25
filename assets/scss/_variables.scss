@@ -1,0 +1,33 @@
+@import "mixins";
+
+$primary: #1b2ac9;
+$blue-2: #0073F0;
+
+$linear-gradient-primary: linear-gradient(271.8deg, $primary -0.56%, $blue-2 100.44%);
+
+$black: #151414;
+$black-dark: #000000;
+
+$grey: #bdbbbb;
+$lightGrey: #f4f6f6;
+$grayPet: #d0d0d0;
+
+$white: #ffffff;
+
+$transition: 0.3s ease;
+
+$grid-breakpoints: (
+  xss: 0,
+  xs: 360px,
+  sm: 476px,
+  md: 768px,
+  lg: 992px,
+  xl: 1560px
+) !default;
+
+:root {
+  --header-height: 138px;
+  --screen-height: 90vh;
+  --feedback-padding-top: 260px;
+  --feedback-padding-bottom: 260px;
+}

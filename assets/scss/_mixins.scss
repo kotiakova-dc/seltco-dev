@@ -1,0 +1,30 @@
+@mixin adopt($value, $prop: max-width) {
+  @media only screen and (#{$prop}: #{($value - 1)}) {
+    @content;
+  }
+}
+
+@mixin up($value, $prop: min-width) {
+  @media only screen and (#{$prop}: #{$value}) {
+    @content;
+  }
+}
+
+@mixin down($breakpoint) {
+  @media screen and (max-width: map-get($grid-breakpoints, $breakpoint)) {
+    @content
+  }
+}
+
+@mixin tr($props: all, $duration: 0.4s) {
+  transition-property: $props;
+  transition-duration: $duration;
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}

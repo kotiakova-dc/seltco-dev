@@ -1,0 +1,87 @@
+@import "~swiper/swiper.scss";
+@import "~swiper/components/effect-fade/effect-fade.scss";
+@import "mixins";
+@import "reset";
+@import "transitions";
+@import "fonts";
+@import "modal";
+@import "forms";
+html {
+  height: 100%;
+  &.locked,
+  &.scroll-locked,
+  Î &.locked body {
+    overflow: hidden;
+  }
+}
+
+body {
+  font-family: "Gerbera";
+  font-weight: 300;
+  background-color: white;
+  color: $black;
+  cursor: default;
+  min-width: 320px;
+  height: 100%;
+
+  // &.widthScroll {
+  //   overflow-y: scroll !important;
+  //   padding-right: 0 !important;
+  // }
+}
+
+#__nuxt,
+.layout-default {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+#__layout {
+  min-height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+main {
+  flex-grow: 1;
+  overflow-x: hidden;
+
+  overflow-y: clip;
+}
+.container {
+  max-width: 1290px;
+  padding: 0 15px;
+  margin: 0 auto;
+  @media (max-width: 400px) {
+    padding: 0 10px;
+  }
+}
+.pages__title {
+  color: $primary;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600;
+  padding: 100px 0 120px;
+  @media (max-width: 1130px) {
+    padding: 80px 0;
+    padding-top: 50px;
+  }
+  @media (max-width: 860px) {
+    font-size: 40px;
+  }
+  @media (max-width: 410px) {
+    font-size: 30px;
+    padding: 50px 0;
+  }
+}
