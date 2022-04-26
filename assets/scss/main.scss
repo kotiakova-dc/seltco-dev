@@ -47,10 +47,12 @@ body {
     flex: 1;
   }
 }
-.page-enter-active, .page-leave-active {
-  transition: opacity .2s;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s;
 }
-.page-enter, .page-leave-active {
+.page-enter,
+.page-leave-active {
   opacity: 0;
 }
 main {
@@ -67,21 +69,51 @@ main {
     padding: 0 10px;
   }
 }
-.pages__title {
-  color: $primary;
-  text-align: center;
-  font-size: 64px;
-  font-weight: 600;
-  padding: 100px 0 120px;
-  @media (max-width: 1130px) {
-    padding: 80px 0;
-    padding-top: 50px;
+$color-primary: #31264f;
+$color-secondary: #ccd390;
+$color-tertiary: #f8f8f8;
+
+$transition1: 0.3s ease all;
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+p {
+  line-height: 1.3em;
+  &:not(:last-child) {
+    padding-bottom: 10px;
   }
-  @media (max-width: 860px) {
-    font-size: 40px;
-  }
-  @media (max-width: 410px) {
-    font-size: 30px;
-    padding: 50px 0;
-  }
+}
+
+// UI
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn--glassmorph {
+  position: fixed;
+  bottom: 20%;
+  z-index: 1000;
+  color: $color-primary;
+  width: 218px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.36);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
 }

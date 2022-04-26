@@ -1,42 +1,14 @@
 <template>
   <div>
-    <Header :view="'frontpage'" ref="header" />
-   
-     
-
-   
- 
-
-      <!-- START normal-scroll-section -->
-
-      <!-- END normal-scroll-section -->
-
-      
-  
-
-      <h1>aaaaaaaaaaaa</h1>
-
-        <Feedback />
-        <Footer />
-     
-   
-    
+    <HeroSlider />
+    <MainPage />
   </div>
 </template>
 
 <script>
-
-
-
-
-
-
- 
-  
-  // сначала надо распаковать архив с кадрами. Где они?
-  // отключи сервер. который nuxt dev. Он иногда не дает перезаписать старые кадры
-  // Кадры залили. теперь ставим количество кадров.
- 
+// сначала надо распаковать архив с кадрами. Где они?
+// отключи сервер. который nuxt dev. Он иногда не дает перезаписать старые кадры
+// Кадры залили. теперь ставим количество кадров.
 </script>
 <style lang="scss">
 .arrow-up {
@@ -285,48 +257,6 @@
   }
 
   margin-bottom: 70px;
-}
-
-.promo-slide__button {
-  height: 71px;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  position: relative;
-  color: white;
-  width: auto;
-  overflow: hidden;
-  background-color: $primary;
-  max-width: 320px;
-  margin-top: 50px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: $linear-gradient-primary;
-    @include tr((opacity));
-  }
-
-  &-text {
-    position: relative;
-    z-index: 1;
-  }
-
-  &:hover {
-    text-decoration: none;
-    color: white;
-
-    &::before {
-      opacity: 0;
-    }
-  }
 }
 
 .js-section.active .promo-slide__content-inner:before {
@@ -655,7 +585,6 @@
 }
 
 @include down("md") {
- 
   .promo-slide--beer-1,
   .promo-slide--water-1 {
     padding-bottom: 60px;

@@ -1,5 +1,673 @@
 <template>
-  <div class="fullscreen-banner__wrap">
+  <div>
+    <!-- <a href="#" class="btn btn--glassmorph">О ферме</a> -->
+    <div class="hero-slider__dots"></div>
+
+    <svg class="go go-next" width="32" height="55" viewBox="0 0 40 55">
+      <polyline points="3 3 30 28 3 53"></polyline>
+    </svg>
+    <svg class="go go-prev" viewBox="0 0 40 55">
+      <polyline points="28 3 3 28 28 53"></polyline>
+    </svg>
+    <div class="hero-slider">
+      <div class="hero-slide active" id="slide01">
+        <div class="cows-container">
+          <div class="cow-1">
+            <img
+              :src="require('@/assets/img/hero-slider/cow-body-1.png')"
+              alt="Корова"
+              class="cow-body-1 img-absolute"
+            />
+
+            <img
+              src="img/cow-tail-1.png"
+              alt="Корова"
+              class="cow-tail-1 img-absolute"
+            />
+            <img
+              src="img/cow-head-1.png"
+              alt="Корова"
+              class="cow-head-1 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-1.png"
+              alt="Корова"
+              class="cow-ear-left-1 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-1.png"
+              alt="Корова"
+              class="cow-ear-right-1 img-absolute"
+            />
+          </div>
+          <div class="cow-2">
+            <img
+              src="img/cow-body-2.png"
+              alt="Корова"
+              class="cow-body-2 img-absolute"
+            />
+            <img
+              src="img/cow-tail-2.png"
+              alt="Корова"
+              class="cow-tail-2 img-absolute"
+            />
+            <img
+              src="img/cow-leg-2.png"
+              alt="Корова"
+              class="cow-leg-2 img-absolute"
+            />
+            <img
+              src="img/cow-head-2.png"
+              alt="Корова"
+              class="cow-head-2 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-2.png"
+              alt="Корова"
+              class="cow-ear-left-2 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-2.png"
+              alt="cow"
+              class="cow-ear-right-2 img-absolute"
+            />
+          </div>
+          <div class="cow-3">
+            <img
+              src="img/cow-body-3.png"
+              alt="Корова"
+              class="cow-body-3 img-absolute"
+            />
+            <img
+              src="img/cow-head-3.png"
+              alt="Корова"
+              class="cow-head-3 img-absolute"
+            />
+          </div>
+          <div class="cow-4">
+            <img
+              src="img/cow-body-4.png"
+              alt="Корова"
+              class="cow-body-4 img-absolute"
+            />
+            <img
+              src="img/cow-head-4.png"
+              alt="Корова"
+              class="cow-head-4 img-absolute"
+            />
+          </div>
+          <div class="cows-sm">
+            <img
+              src="img/cows-sm-body.png"
+              alt="Корова"
+              class="cows-body-sm img-absolute"
+            />
+            <img
+              src="img/cow-sm-head1.png"
+              alt="Корова"
+              class="cows-head-sm1 img-absolute"
+            />
+            <img
+              src="img/cow-sm-head2.png"
+              alt="Корова"
+              class="cows-head-sm2 img-absolute"
+            />
+          </div>
+        </div>
+        <div class="grass-animated1">
+          <img
+            src="img/grass-anim1.png"
+            alt="Травинка"
+            class="grass-anim grass-anim1"
+          />
+          <img
+            src="img/grass-anim2.png"
+            alt="Травинка"
+            class="grass-anim grass-anim2"
+          />
+          <img
+            src="img/grass-anim3.png"
+            alt="Травинка"
+            class="grass-anim grass-anim3"
+          />
+          <img
+            src="img/grass-anim4.png"
+            alt="Травинка"
+            class="grass-anim grass-anim4"
+          />
+          <img
+            src="img/grass-anim5.png"
+            alt="Травинка"
+            class="grass-anim grass-anim5"
+          />
+        </div>
+
+        <div class="grass-container-2">
+          <div class="grass-animated2">
+            <img
+              src="img/grass-anim6.png"
+              alt="Травинка"
+              class="grass-anim grass-anim6"
+            />
+            <img
+              src="img/grass-anim7.png"
+              alt="Травинка"
+              class="grass-anim grass-anim7"
+            />
+            <img
+              src="img/grass-anim8.png"
+              alt="Травинка"
+              class="grass-anim grass-anim8"
+            />
+            <img
+              src="img/grass-anim9.png"
+              alt="Травинка"
+              class="grass-anim grass-anim9"
+            />
+            <img
+              src="img/grass-anim10.png"
+              alt="Травинка"
+              class="grass-anim grass-anim10"
+            />
+            <img
+              src="img/grass-anim11.png"
+              alt="Травинка"
+              class="grass-anim grass-anim11"
+            />
+            <img
+              src="img/grass-anim12.png"
+              alt="Травинка"
+              class="grass-anim grass-anim12"
+            />
+          </div>
+          <picture
+            ><source srcset="img/grass3.webp" type="image/webp" />
+            <img src="img/grass3.png" alt="" class="grass3 img-absolute"
+          /></picture>
+          <picture
+            ><source srcset="img/grass2.webp" type="image/webp" />
+            <img src="img/grass2.png" alt="" class="grass2 img-absolute"
+          /></picture>
+        </div>
+        <picture
+          ><source srcset="img/grass1.webp" type="image/webp" />
+          <img src="img/grass1.png" alt="" class="grass1 img-absolute"
+        /></picture>
+
+        <picture
+          ><source srcset="img/scene1.webp" type="image/webp" />
+          <img src="img/scene1.png" alt="" class="scene1 img-absolute"
+        /></picture>
+      </div>
+      <div class="hero-slide" id="slide02">
+        <div class="hero__overlay"></div>
+        <div class="cows-container">
+          <div class="cow-1">
+            <img
+              src="img/cow-body-1.png"
+              alt="Корова"
+              class="cow-body-1 img-absolute"
+            />
+            <img
+              src="img/cow-tail-1.png"
+              alt="Корова"
+              class="cow-tail-1 img-absolute"
+            />
+            <img
+              src="img/cow-head-1.png"
+              alt="Корова"
+              class="cow-head-1 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-1.png"
+              alt="Корова"
+              class="cow-ear-left-1 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-1.png"
+              alt="Корова"
+              class="cow-ear-right-1 img-absolute"
+            />
+          </div>
+          <div class="cow-2">
+            <img
+              src="img/cow-body-2.png"
+              alt="Корова"
+              class="cow-body-2 img-absolute"
+            />
+            <img
+              src="img/cow-tail-2.png"
+              alt="Корова"
+              class="cow-tail-2 img-absolute"
+            />
+            <img
+              src="img/cow-leg-2.png"
+              alt="Корова"
+              class="cow-leg-2 img-absolute"
+            />
+            <img
+              src="img/cow-head-2.png"
+              alt="Корова"
+              class="cow-head-2 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-2.png"
+              alt="Корова"
+              class="cow-ear-left-2 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-2.png"
+              alt="cow"
+              class="cow-ear-right-2 img-absolute"
+            />
+          </div>
+          <div class="cow-3">
+            <img
+              src="img/cow-body-3.png"
+              alt="Корова"
+              class="cow-body-3 img-absolute"
+            />
+            <img
+              src="img/cow-head-3.png"
+              alt="Корова"
+              class="cow-head-3 img-absolute"
+            />
+          </div>
+          <div class="cow-4">
+            <img
+              src="img/cow-body-4.png"
+              alt="Корова"
+              class="cow-body-4 img-absolute"
+            />
+            <img
+              src="img/cow-head-4.png"
+              alt="Корова"
+              class="cow-head-4 img-absolute"
+            />
+          </div>
+          <div class="cows-sm">
+            <img
+              src="img/cows-sm-body.png"
+              alt="Корова"
+              class="cows-body-sm img-absolute"
+            />
+            <img
+              src="img/cow-sm-head1.png"
+              alt="Корова"
+              class="cows-head-sm1 img-absolute"
+            />
+            <img
+              src="img/cow-sm-head2.png"
+              alt="Корова"
+              class="cows-head-sm2 img-absolute"
+            />
+          </div>
+        </div>
+        <div class="grass-animated1">
+          <img
+            src="img/grass-anim1.png"
+            alt="Травинка"
+            class="grass-anim grass-anim1"
+          />
+          <img
+            src="img/grass-anim2.png"
+            alt="Травинка"
+            class="grass-anim grass-anim2"
+          />
+          <img
+            src="img/grass-anim3.png"
+            alt="Травинка"
+            class="grass-anim grass-anim3"
+          />
+          <img
+            src="img/grass-anim4.png"
+            alt="Травинка"
+            class="grass-anim grass-anim4"
+          />
+          <img
+            src="img/grass-anim5.png"
+            alt="Травинка"
+            class="grass-anim grass-anim5"
+          />
+        </div>
+
+        <div class="grass-container-2">
+          <div class="grass-animated2">
+            <img
+              src="img/grass-anim6.png"
+              alt="Травинка"
+              class="grass-anim grass-anim6"
+            />
+            <img
+              src="img/grass-anim7.png"
+              alt="Травинка"
+              class="grass-anim grass-anim7"
+            />
+            <img
+              src="img/grass-anim8.png"
+              alt="Травинка"
+              class="grass-anim grass-anim8"
+            />
+            <img
+              src="img/grass-anim9.png"
+              alt="Травинка"
+              class="grass-anim grass-anim9"
+            />
+            <img
+              src="img/grass-anim10.png"
+              alt="Травинка"
+              class="grass-anim grass-anim10"
+            />
+            <img
+              src="img/grass-anim11.png"
+              alt="Травинка"
+              class="grass-anim grass-anim11"
+            />
+            <img
+              src="img/grass-anim12.png"
+              alt="Травинка"
+              class="grass-anim grass-anim12"
+            />
+          </div>
+          <picture
+            ><source srcset="img/grass3.webp" type="image/webp" />
+            <img src="img/grass3.png" alt="" class="grass3 img-absolute"
+          /></picture>
+          <picture
+            ><source srcset="img/grass2.webp" type="image/webp" />
+            <img src="img/grass2.png" alt="" class="grass2 img-absolute"
+          /></picture>
+        </div>
+        <picture
+          ><source srcset="img/grass1.webp" type="image/webp" />
+          <img src="img/grass1.png" alt="" class="grass1 img-absolute"
+        /></picture>
+
+        <picture
+          ><source srcset="img/scene1.webp" type="image/webp" />
+          <img src="img/scene1.png" alt="" class="scene1 img-absolute"
+        /></picture>
+        <div class="hero__herbs-container">
+          <span class="hero__herb-img"
+            ><img
+              src="img/hero-herb1.png"
+              alt="Луговые травы"
+              class="hero__herb hero__herb1"
+          /></span>
+          <span class="hero__herb-img">
+            <img
+              src="img/hero-herb2.png"
+              alt="Луговые травы"
+              class="hero__herb hero__herb2"
+            />
+          </span>
+
+          <span class="hero__herb-img">
+            <img
+              src="img/hero-herb3.png"
+              alt="Луговые травы"
+              class="hero__herb hero__herb3"
+            />
+          </span>
+          <span class="hero__herb-img">
+            <img
+              src="img/hero-herb4.png"
+              alt="Луговые травы"
+              class="hero__herb hero__herb4"
+            />
+          </span>
+          <span class="hero__herb-img herb-circle--animated">
+            <img
+              src="img/hero-herb5.png"
+              alt="Луговые травы"
+              class="hero__herb hero__herb5"
+            />
+          </span>
+        </div>
+      </div>
+      <div class="hero-slide" id="slide03">
+        <div class="grass-animated1">
+          <img
+            src="img/grass-anim1.png"
+            alt="Травинка"
+            class="grass-anim grass-anim1"
+          />
+          <img
+            src="img/grass-anim2.png"
+            alt="Травинка"
+            class="grass-anim grass-anim2"
+          />
+          <img
+            src="img/grass-anim3.png"
+            alt="Травинка"
+            class="grass-anim grass-anim3"
+          />
+          <img
+            src="img/grass-anim4.png"
+            alt="Травинка"
+            class="grass-anim grass-anim4"
+          />
+          <img
+            src="img/grass-anim5.png"
+            alt="Травинка"
+            class="grass-anim grass-anim5"
+          />
+        </div>
+
+        <div class="grass-container-2">
+          <div class="grass-animated2">
+            <img
+              src="img/grass-anim6.png"
+              alt="Травинка"
+              class="grass-anim grass-anim6"
+            />
+            <img
+              src="img/grass-anim7.png"
+              alt="Травинка"
+              class="grass-anim grass-anim7"
+            />
+          </div>
+          <picture
+            ><source srcset="img/grass3.webp" type="image/webp" />
+            <img src="img/grass3.png" alt="" class="grass3 img-absolute"
+          /></picture>
+          <picture
+            ><source srcset="img/grass2.webp" type="image/webp" />
+            <img src="img/grass2.png" alt="" class="grass2 img-absolute"
+          /></picture>
+        </div>
+        <picture
+          ><source srcset="img/grass1.webp" type="image/webp" />
+          <img src="img/grass1.png" alt="" class="grass1 img-absolute"
+        /></picture>
+
+        <picture
+          ><source srcset="img/scene1.webp" type="image/webp" />
+          <img src="img/scene1.png" alt="" class="scene1 img-absolute"
+        /></picture>
+        <div class="cows-container">
+          <div class="cow-1">
+            <img
+              src="img/cow-body-1.png"
+              alt="Корова"
+              class="cow-body-1 img-absolute"
+            />
+            <img
+              src="img/cow-tail-1.png"
+              alt="Корова"
+              class="cow-tail-1 img-absolute"
+            />
+            <img
+              src="img/cow-head-1.png"
+              alt="Корова"
+              class="cow-head-1 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-1.png"
+              alt="Корова"
+              class="cow-ear-left-1 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-1.png"
+              alt="Корова"
+              class="cow-ear-right-1 img-absolute"
+            />
+          </div>
+          <div class="cow-2">
+            <img
+              src="img/cow-body-2.png"
+              alt="Корова"
+              class="cow-body-2 img-absolute"
+            />
+            <img
+              src="img/cow-tail-2.png"
+              alt="Корова"
+              class="cow-tail-2 img-absolute"
+            />
+            <img
+              src="img/cow-leg-2.png"
+              alt="Корова"
+              class="cow-leg-2 img-absolute"
+            />
+            <img
+              src="img/cow-head-2.png"
+              alt="Корова"
+              class="cow-head-2 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-2.png"
+              alt="Корова"
+              class="cow-ear-left-2 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-2.png"
+              alt="cow"
+              class="cow-ear-right-2 img-absolute"
+            />
+          </div>
+          <div class="cow-3">
+            <img
+              src="img/cow-body-3.png"
+              alt="Корова"
+              class="cow-body-3 img-absolute"
+            />
+            <img
+              src="img/cow-head-3.png"
+              alt="Корова"
+              class="cow-head-3 img-absolute"
+            />
+          </div>
+          <div class="cow-4">
+            <img
+              src="img/cow-body-4.png"
+              alt="Корова"
+              class="cow-body-4 img-absolute"
+            />
+            <img
+              src="img/cow-head-4.png"
+              alt="Корова"
+              class="cow-head-4 img-absolute"
+            />
+          </div>
+          <div class="cows-sm">
+            <img
+              src="img/cows-sm-body.png"
+              alt="Корова"
+              class="cows-body-sm img-absolute"
+            />
+            <img
+              src="img/cow-sm-head1.png"
+              alt="Корова"
+              class="cows-head-sm1 img-absolute"
+            />
+            <img
+              src="img/cow-sm-head2.png"
+              alt="Корова"
+              class="cows-head-sm2 img-absolute"
+            />
+          </div>
+        </div>
+
+        <picture
+          ><source srcset="img/scene1.webp" type="image/webp" />
+          <img src="img/scene1.png" alt="" class="scene2 img-absolute"
+        /></picture>
+        <picture
+          ><source srcset="img/scene3.webp" type="image/webp" />
+          <img src="img/scene3.png" alt="" class="scene3 img-absolute"
+        /></picture>
+        <div class="cow-5">
+          <div class="cow-head-cont-5">
+            <img
+              src="img/cow-head-5.png"
+              alt="Корова"
+              class="cow-head-5 img-absolute"
+            />
+            <img
+              src="img/cow-ear-left-5.png"
+              alt="Корова"
+              class="cow-ear-left-5 img-absolute"
+            />
+            <img
+              src="img/cow-ear-right-5.png"
+              alt="Корова"
+              class="cow-ear-right-5 img-absolute"
+            />
+            <img
+              src="img/cow-eyes-5.png"
+              alt="Корова"
+              class="cow-eyes-5 img-absolute"
+            />
+            <img
+              src="img/cow-eyes-close-5.png"
+              alt="Корова"
+              class="cow-eyes-5 cow-eyes-close-5 img-absolute"
+            />
+          </div>
+          <img
+            src="img/cow-body-5.png"
+            alt="cow"
+            class="cow-body-5 img-absolute"
+          />
+        </div>
+      </div>
+      <div class="hero-slide" id="slide04">
+        <picture
+          ><source srcset="img/scene3.webp" type="image/webp" />
+          <img src="img/scene3.png" alt="" class="scene33 img-absolute"
+        /></picture>
+
+        <picture
+          ><source srcset="img/scene4.webp" type="image/webp" />
+          <img src="img/scene4.png" alt="" class="scene4 img-absolute"
+        /></picture>
+      </div>
+      <div class="hero-slide" id="slide05">
+        <div class="hero-slide__btns">
+          <a
+            href="#"
+            class="btn btn--glassmorph hero-slide__btn"
+            data-popup="#popup"
+            >О ферме</a
+          >
+          <a href="#" class="btn btn--glassmorph hero-slide__btn">Документы</a>
+          <a href="#" class="btn btn--glassmorph hero-slide__btn">Новости</a>
+        </div>
+        <picture
+          ><source srcset="img/scene4.webp" type="image/webp" />
+          <img src="img/scene4.png" alt="" class="scene4-scaled img-absolute"
+        /></picture>
+        <picture
+          ><source srcset="img/scene5.webp" type="image/webp" />
+          <img src="img/scene5.png" alt="" class="scene5 img-absolute"
+        /></picture>
+      </div>
+    </div>
+    <div class="next-section"></div>
+    <div class="next-section"></div>
+    <div class="next-section"></div>
+  </div>
+  <!-- <div class="fullscreen-banner__wrap">
     <Header />
     <div class="fullscreen-banner" v-if="$route.name === 'solutions'">
       <div>
@@ -64,7 +732,7 @@
 
       <h1 class="fullscreen-banner__title text-center">О компании</h1>
     </div>
-  </div>
+  </div> -->
 </template>
 <script>
 export default {
@@ -78,82 +746,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.fullscreen-banner__wrap {
-  height: 100vh;
-  @media (max-width: 1300px) {
-    height: 100%;
-  }
-
-}
-.fullscreen-banner {
-  background: #f2f3f7 url("~assets/img/2fon.png") center no-repeat;
-  position: relative;
-  z-index: -1;
-  height: 100vh;
-  &--partners {
-    @media (max-width: 860px) {
-      min-height: 300px;
-      & > div {
-        display: none;
-      }
-    }
-    @media (max-width: 550px) {
-      min-height: 250px;
-    }
-  }
-  &__img {
-    display: flex;
-    flex: 0 0 50%;
-    justify-content: flex-end;
-    img {
-      height: 100vh;
-      width: 50%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 640px) {
-      flex: 0 0 100%;
-      img {
-        width: 100%;
-      }
-    }
-  }
-  &__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 900;
-    font-size: 124px;
-    line-height: 145px;
-    color: $primary;
-    white-space: nowrap;
-    @media (max-width: 1400px) {
-      font-size: 100px;
-      line-height: 100px;
-    }
-    @media (max-width: 991px) {
-      font-size: 60px;
-      line-height: 60px;
-    }
-    @media (max-width: 640px) {
-      white-space: normal;
-      font-size: 40px;
-      line-height: 40px;
-
-      text-align: center;
-    }
-  }
-  @media (max-width: 991px) {
-    padding-top: 90px;
-    height: 100%;
-    img {
-      height: 100%;
-    }
-  }
-  @media (max-width: 791px) {
-    padding-top: 60px;
-  }
-}
-</style>
+<style lang="scss"></style>
