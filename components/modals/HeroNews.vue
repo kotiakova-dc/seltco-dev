@@ -1,145 +1,220 @@
 <template>
   <div>
-   
- 
-  <b-modal id="hero-modal-news" title="О ферме" >
+    <b-modal id="hero-modal-news" title="Новости">
+      <b-container>
+        <b-row>
+          <b-col cols="12">
+            <div
+              id="listgroup-ex"
+              style="position: relative; overflow-y: auto; height: 300px"
+            >
+              <b-row id="year-1">
+                <b-col cols="1"><h4>2021</h4></b-col>
 
+                <b-col cols="9"
+                  ><ul>
+                    <li class="list-item" v-for="el in y2021" :key="el.id">
+                      <h4>{{ el.title }}</h4>
+                      <a href="#" class="news-more">Подробнее</a>
+                    </li>
+                  </ul></b-col
+                >
+              </b-row>
 
-    <div class="side-bar">
-  <nav class="navigation">
-    <ul>
-      <li>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#gallery">Gallery</a>
-      </li>
-    </ul>
-  </nav>
-</div>
-<div class="main-content">
-  <section id="about">
-    <h1>About</h1>
-  </section>
-  <section id="products">
-    <h1>Products</h1>
-  </section>
-  <section id="services">
-    <h1>Services</h1>
-  </section>
-  <section id="contact">
-    <h1>Contact</h1>
-  </section>
-  <section id="gallery">
-    <h1>Gallery</h1>
-  </section>
-</div>
+              <b-row id="year-2">
+                <b-col cols="1"><h4>2020</h4></b-col>
 
-  </b-modal>
+                <b-col cols="9"
+                  ><ul>
+                    <li class="list-item" v-for="el in y2020" :key="el.id">
+                      <h4>{{ el.title }}</h4>
+                      <a href="#" class="news-more">Подробнее</a>
+                    </li>
+                  </ul></b-col
+                >
+              </b-row>
+              <b-row id="year-3">
+                <b-col cols="1"><h4>2019</h4></b-col>
+
+                <b-col cols="9"
+                  ><ul>
+                    <li class="list-item" v-for="el in y2019" :key="el.id">
+                      <h4>{{ el.title }}</h4>
+                      <a href="#" class="news-more">Подробнее</a>
+                    </li>
+                  </ul></b-col
+                >
+              </b-row>
+
+              <h4 id="year-4">2018</h4>
+
+              <h4 id="year-5">2017</h4>
+            </div>
+          </b-col>
+          <b-col cols="1">
+            <b-list-group v-b-scrollspy:listgroup-ex>
+              <b-list-group-item href="#year-1">2021</b-list-group-item>
+              <b-list-group-item href="#year-2">2020</b-list-group-item>
+              <b-list-group-item href="#year-3">2019</b-list-group-item>
+              <b-list-group-item href="#year-4">2018</b-list-group-item>
+              <b-list-group-item href="#year-5">2017</b-list-group-item>
+            </b-list-group>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-modal>
   </div>
 </template>
 
 <script>
-
 export default {
-    mounted() {
-     
-window.addEventListener("scroll", this.navHighlighter);
-
-    } ,
-  methods: {
-navHighlighter() {
-  const sections = document.querySelectorAll("section[id]");
-  // Get current scroll position
-  let scrollY = window.pageYOffset;
-    console.log(1)
-  // Now we loop through sections to get height, top and ID values for each
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    const sectionId = current.getAttribute("id");
-    
-    /*
-    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
-    */
-    if (
-      scrollY > sectionTop &&
-      scrollY <= sectionTop + sectionHeight
-    ){
-      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
-    } else {
-      document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
-    }
-  })
-
-}
-    }
+  data() {
+    return {
+      y2021: [
+        {
+          id: "event1",
+          title: `ОТЧЕТ об итогах голосования`,
+          link: "",
+        },
+        {
+          id: "event2",
+          title: `Сообщение о проведении внеочередного общего собрания акционеров АО Сельцо 23 декабря 2021 г.`,
+          link: "",
+        },
+        {
+          id: "event3",
+          title: `Отчет об итогах голосования на годовом собрании акционеров АО Сельцо 28.06.2021 г`,
+          link: "",
+        },
+        {
+          id: "event4",
+          title: `Сообщение о проведении годового общего собрания акционеров АО Сельцо в 2021 году`,
+          link: "",
+        },
+        {
+          id: "event5",
+          title: `Отчет об итогах голосования на внеочередном общем собрании акционеров АО «Сельцо» 09.03.2021 г.`,
+          link: "",
+        },
+        {
+          id: "event6",
+          title: `Проведение внеочередного общего собрания акционеров АО «Сельцо» 09.03.2021г.`,
+          link: "",
+        },
+      ],
+      y2020: [
+        {
+          id: "event1",
+          title: `ОТЧЕТ об итогах голосования`,
+          link: "",
+        },
+        {
+          id: "event2",
+          title: `Сообщение о проведении внеочередного общего собрания акционеров АО Сельцо 23 декабря 2021 г.`,
+          link: "",
+        },
+        {
+          id: "event3",
+          title: `Отчет об итогах голосования на годовом собрании акционеров АО Сельцо 28.06.2021 г`,
+          link: "",
+        },
+        {
+          id: "event4",
+          title: `Сообщение о проведении годового общего собрания акционеров АО Сельцо в 2021 году`,
+          link: "",
+        },
+        {
+          id: "event5",
+          title: `Отчет об итогах голосования на внеочередном общем собрании акционеров АО «Сельцо» 09.03.2021 г.`,
+          link: "",
+        },
+        {
+          id: "event6",
+          title: `Проведение внеочередного общего собрания акционеров АО «Сельцо» 09.03.2021г.`,
+          link: "",
+        },
+      ],
+      y2019: [
+        {
+          id: "event1",
+          title: `ОТЧЕТ об итогах голосования`,
+          link: "",
+        },
+        {
+          id: "event2",
+          title: `Сообщение о проведении внеочередного общего собрания акционеров АО Сельцо 23 декабря 2021 г.`,
+          link: "",
+        },
+        {
+          id: "event3",
+          title: `Отчет об итогах голосования на годовом собрании акционеров АО Сельцо 28.06.2021 г`,
+          link: "",
+        },
+        {
+          id: "event4",
+          title: `Сообщение о проведении годового общего собрания акционеров АО Сельцо в 2021 году`,
+          link: "",
+        },
+        {
+          id: "event5",
+          title: `Отчет об итогах голосования на внеочередном общем собрании акционеров АО «Сельцо» 09.03.2021 г.`,
+          link: "",
+        },
+        {
+          id: "event6",
+          title: `Проведение внеочередного общего собрания акционеров АО «Сельцо» 09.03.2021г.`,
+          link: "",
+        },
+      ],
+    };
+  },
 };
 </script>
-<style scoped>
-
-.side-bar {
-  width: 160px;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+<style lang="scss" scoped>
+.news-more {
+  color: $color-tertiary;
+  &:hover {
+    text-decoration: underline;
+  }
 }
-
-nav ul {
-  padding: 0;
+.col-10,
+.modal-body,
+.col-12,
+.col-1,
+.container {
+  padding: 0 !important;
+  h4 {
+    font-size: 20px;
+    color: $color-primary;
+  }
 }
-
-nav li {
-  list-style: none;
+.list-item {
+  margin-bottom: 50px;
+  h4,
+  p {
+    font-size: 20px;
+    color: $color-primary;
+  }
 }
-
-nav li a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-  font-weight: 400;
-  transition: all ease-out 
-    250ms;
-   transform:rotate(270deg);
-  padding: 35px;
+.row {
+  flex-wrap: nowrap !important;
+  justify-content: unset;
 }
-
-nav li a:hover {
-  color: lime;
+.list-group-item-action {
+  color: $color-primary;
+  font-size: 20px;
+  margin-bottom: 32px;
 }
-
-.main-content {
-  margin-left: 160px;
+#listgroup-ex {
+  height: 100%;
 }
+.list-group-item-action {
 
-section {
-  background-color: #f2f2f2;
-  height: 90vh;
-  margin:0;
-  padding:2.5rem 4rem;
-}
-
-section:nth-of-type(2n) {
-  background-color: #ccc;
-}
-
-section:last-of-type {
-  height: 100vh;
-}
-
-h1 {
-  color: #444;
-  font-weight: 600;
-}
-
-.active {
-  color: lime; 
-  font-weight: 600;
+  &:hover,&:active,&:focus {
+    color: inherit;
+    background-color: inherit;
+  }
+    
 }
 </style>
 

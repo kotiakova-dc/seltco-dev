@@ -10,12 +10,12 @@
         </div>
     <div class="hero-slider__dots"></div>
 
-    <svg class="go go-next" width="32" height="55" viewBox="0 0 40 55">
+    <!-- <svg class="go go-next" width="32" height="55" viewBox="0 0 40 55">
       <polyline points="3 3 30 28 3 53"></polyline>
     </svg>
     <svg class="go go-prev" viewBox="0 0 40 55">
       <polyline points="28 3 3 28 28 53"></polyline>
-    </svg>
+    </svg> -->
 
     <div class="hero-slider">
        
@@ -1267,7 +1267,7 @@ animations[2]
     {
       yPercent: 200,
     },
-    "-=0.9"
+    "-=1.5"
   )
   .to(
     " .grass2",
