@@ -1,7 +1,7 @@
 <template>
   <div>
+    <HeaderTop />
     <HeroSlider />
-
   </div>
 </template>
 
