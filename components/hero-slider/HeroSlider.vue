@@ -1,26 +1,190 @@
 <template>
   <div>
-    <div class="hero-slide__btns">
-      <b-button
+    
+     <div class="hero__container" id="container">
+      <div class="wrapper" id="wrapper">
+         <div class="hero-slide__btns">
+      <b-button @click="pauseScrollTrigger"
         class="btn btn--glassmorph hero-slide__btn"
         v-b-modal.hero-modal-about
         >О ферме</b-button
       >
-      <b-button
+      <b-button @click="pauseScrollTrigger"
         class="btn btn--glassmorph hero-slide__btn"
         v-b-modal.hero-modal-docs
         >Документы</b-button
       >
-      <b-button
+      <b-button @click="pauseScrollTrigger"
         class="btn btn--glassmorph hero-slide__btn"
         v-b-modal.hero-modal-news
         >Новости</b-button
       >
     </div>
-    <div class="hero-slider__dots"></div>
+ 
+        <img
+          :src="require('@/assets/img/hero-slider/grass2.png')"
+          alt=""
+          class="grass2 img-absolute"
+        />
+        <div class="cows-container">
+          <div class="cow-1">
+            <img
+              :src="require('@/assets/img/hero-slider/cow-body-1.png')"
+              alt="Корова"
+              class="cow-body-1 img-absolute"
+            />
 
-    <div class="hero-slider">
-      <div class="hero-slide active" id="slide01">
+            <img
+              :src="require('@/assets/img/hero-slider/cow-tail-1.png')"
+              alt="Корова"
+              class="cow-tail-1 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-head-1.png/')"
+              alt="Корова"
+              class="cow-head-1 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-ear-left-1.png')"
+              alt="Корова"
+              class="cow-ear-left-1 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-ear-right-1.png/')"
+              alt="Корова"
+              class="cow-ear-right-1 img-absolute"
+            />
+          </div>
+          <div class="cow-2">
+            <img
+              :src="require('@/assets/img/hero-slider/cow-body-2.png')"
+              alt="Корова"
+              class="cow-body-2 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-tail-2.png')"
+              alt="Корова"
+              class="cow-tail-2 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-leg-2.png')"
+              alt="Корова"
+              class="cow-leg-2 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-head-2.png')"
+              alt="Корова"
+              class="cow-head-2 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-ear-left-2.png')"
+              alt="Корова"
+              class="cow-ear-left-2 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-ear-right-2.png')"
+              alt="cow"
+              class="cow-ear-right-2 img-absolute"
+            />
+          </div>
+          <div class="cow-3">
+            <img
+              :src="require('@/assets/img/hero-slider/cow-body-3.png')"
+              alt="Корова"
+              class="cow-body-3 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-head-3.png')"
+              alt="Корова"
+              class="cow-head-3 img-absolute"
+            />
+          </div>
+          <div class="cow-4">
+            <img
+              :src="require('@/assets/img/hero-slider/cow-body-4.png')"
+              alt="Корова"
+              class="cow-body-4 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-head-4.png')"
+              alt="Корова"
+              class="cow-head-4 img-absolute"
+            />
+          </div>
+          <div class="cows-sm">
+            <img
+              :src="require('@/assets/img/hero-slider/cows-sm-body.png')"
+              alt="Корова"
+              class="cows-body-sm img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-sm-head1.png')"
+              alt="Корова"
+              class="cows-head-sm1 img-absolute"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/cow-sm-head2.png')"
+              alt="Корова"
+              class="cows-head-sm2 img-absolute"
+            />
+          </div>
+        </div>
+
+        <img
+          :src="require('@/assets/img/hero-slider/scene-main.svg')"
+          alt=""
+          class="scene1"
+        />
+        <div class="hero__overlay"></div>
+        <div class="hero__herbs-container">
+          <span class="hero__herb-img"
+            ><img
+              :src="require('@/assets/img/hero-slider/hero-herb1.png')"
+              alt="Луговые травы"
+              class="hero__herb hero__herb1"
+          /></span>
+          <span class="hero__herb-img">
+            <img
+              :src="require('@/assets/img/hero-slider/hero-herb2.png')"
+              alt="Луговые травы"
+              class="hero__herb hero__herb2"
+            />
+          </span>
+
+          <span class="hero__herb-img">
+            <img
+              :src="require('@/assets/img/hero-slider/hero-herb3.png')"
+              alt="Луговые травы"
+              class="hero__herb hero__herb3"
+            />
+          </span>
+          <span class="hero__herb-img">
+            <img
+              :src="require('@/assets/img/hero-slider/hero-herb4.png')"
+              alt="Луговые травы"
+              class="hero__herb hero__herb4"
+            />
+          </span>
+          <span class="hero__herb-img herb-circle--animated">
+            <img
+              :src="require('@/assets/img/hero-slider/hero-herb5.png')"
+              alt="Луговые травы"
+              class="hero__herb hero__herb5"
+            />
+          </span>
+        </div>
+
+        <img
+          :src="require('@/assets/img/hero-slider/scene-main2.svg')"
+          alt=""
+          class="scene2"
+        />
+      </div>
+    </div>
+
+   
+
+    <!--
         <div class="cows-container">
           <div class="cow-1">
             <img
@@ -381,1072 +545,538 @@
           class="scene3 img-absolute"
         />
       </div>
-    </div>
+    </div> -->
     <div class="next-section"></div>
     <div class="next-section"></div>
     <div class="next-section"></div>
 
-    <ModalsHeroAbout />
+    <ModalsHeroAbout v-on:test = "doSmth" />
     <ModalsHeroDocs />
     <ModalsHeroNews />
   </div>
 </template>
 <script>
-import $ from "jquery";
+import SmoothScrollbar from 'smooth-scrollbar'
 export default {
-  mounted() {
-    const cowOneAnimation = new TimelineMax({ repeat: -1 });
-    const cowTwoAnimation = new TimelineMax({ repeat: -1 });
-    const cowThreeAnimation = new TimelineMax({ repeat: -1 });
-    const cowFourAnimation = new TimelineMax({ repeat: -1 });
-    const cowSmAnimation = new TimelineMax({ repeat: -1 });
-    const cowFiveAnimation = new TimelineMax({ repeat: -1 });
+  methods: {
+    scrollAnimation() {
+ let bodyScrollBar = SmoothScrollbar.init(document.body, {
+      damping: 0.1,
+      delegateTo: document,
+    });
 
-    cowOneAnimation
-      // head
-      .to(".cow-head-1", 2, {
-        rotation: -30,
-      })
-      .to(".cow-head-1", 2, {
-        rotation: 0,
-        delay: 2,
-      })
-      .to(
-        ".cow-tail-1",
-        2,
-        {
-          rotation: 45,
-          transformOrigin: "left top",
-        },
-        "-=4"
-      )
-      //left ear
-      .to(
-        ".cow-ear-left-1",
-        3,
-        {
-          rotation: -40,
-          y: 30,
-          x: 7,
-          transformOrigin: "left bottom",
-        },
-        "-=6"
-      )
-      .to(
-        ".cow-ear-left-1",
-        3,
-        {
-          rotation: 0,
-          y: 0,
-          x: 0,
-        },
-        "-=2"
-      )
-      // right ear
-      .to(
-        ".cow-ear-right-1",
-        3,
-        {
-          rotation: -30,
+    bodyScrollBar.setPosition(0, 0);
+    bodyScrollBar.track.xAxis.element.remove();
 
-          transformOrigin: "left bottom",
-        },
-        "-=7"
-      )
-      .to(
-        ".cow-ear-right-1",
-        3,
-        {
-          rotation: 0,
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        if (arguments.length) {
+          bodyScrollBar.scrollTop = value;
+        }
+        return bodyScrollBar.scrollTop;
+      },
+    });
 
-          transformOrigin: "left bottom",
-        },
-        "-=3"
-      )
-      // tail
-      .to(
-        ".cow-tail-1",
-        2,
+    bodyScrollBar.addListener(ScrollTrigger.update);
+    // remove fix when scrolled past last point scrolltrigger
+    const addFixedBg = () => {
+      const scrollContent = document.querySelector(".scroll-content");
+     scrollContent.classList.add("fix-scroll");
+    };
+    addFixedBg();
+    const removeFixedBg = () => {
+     const scrollContent = document.querySelector(".scroll-content");
+     scrollContent.classList.remove("fix-scroll");
+    };
+
+    gsap.registerPlugin("ScrollTrigger");
+    ScrollTrigger.create({
+      trigger: "#container",
+      scrub: 1,
+      pin: true,
+      start: "top top",
+      end: "+=18000",
+      toggleActions: "restart pause resume pause",
+      onEnterBack: () => addFixedBg(),
+      onLeave: () => removeFixedBg(),
+      onLeaveBack: () => removeFixedBg(),
+    });
+
+    let scene = gsap.timeline();
+
+    let part0_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 0,
+        end: 2000,
+        scrub: 1,
+      },
+    });
+    let part1_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 3000,
+        end: 4000,
+        scrub: 1,
+      },
+    });
+    let part2_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 4000,
+        end: 6000,
+        scrub: 1,
+      },
+    });
+
+    let part3_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 6000,
+        end: 8000,
+        scrub: 1,
+      },
+    });
+    let part4_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 8000,
+        end: 12000,
+        scrub: 1,
+      },
+    });
+    let part5_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 12000,
+        end: 14000,
+        scrub: 1,
+      },
+    });
+    let part6_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 14000,
+        end: 16000,
+        scrub: 1,
+      },
+    });
+    let part7_tl = gsap.timeline({
+      scrollTrigger: {
+        start: 16000,
+        end: 18000,
+        scrub: 1,
+      },
+    });
+    // TIMELINE: Part 0
+    part0_tl
+      // NEW ANIMATION
+      ///
+      .fromTo(
+        ".scene1",
         {
-          rotation: 0,
-          transformOrigin: "left top",
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
         },
-        "-=3"
+        {
+          scale: 1,
+          xPercent: 0,
+          yPercent: 0,
+          duration: 0,
+        }
+      )
+      .fromTo(
+        ".scene2",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 0,
+        }
+      )
+      .fromTo(
+        ".grass2",
+        {
+          yPercent: 30,
+        },
+        {
+          yPercent: -95,
+
+          ease: "sine.out",
+        }
+      )
+      .fromTo(
+        ".hero__herbs-container",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+
+          ease: "sine.out",
+        },
+        "-=0.3"
       );
-
-    cowTwoAnimation
-
-      .to(".cow-leg-2", 2, {
-        rotation: -27,
-        y: 7,
-        x: 2,
-        //delay: 4,
-        transformOrigin: "left top",
-      })
-      .to(".cow-leg-2", 0.5, {
-        rotation: 0,
-        y: 0,
-        x: 0,
-      })
-      .to(".cow-head-2", 2, {
-        rotation: 10,
-        x: 10,
-        transformOrigin: "top top",
-      })
-      .to(
-        ".cow-ear-left-2",
-        2,
+    // TIMELINE: Part 1
+    part1_tl
+      // NEW ANIMATION
+      .fromTo(
+        ".cows-container",
         {
-          rotation: 15,
-
-          transformOrigin: "right bottom",
+          scale: 1,
+          yPercent: 0,
         },
-        "-=2"
-      )
-      .to(
-        ".cow-ear-right-2",
-        2,
         {
-          rotation: -5,
-          x: 2,
-          y: -2,
-
-          transformOrigin: "left bottom",
-        },
-        "-=2"
+          scale: 1,
+          yPercent: 0,
+          ease: "sine.out",
+        }
       )
-      .to(
-        ".cow-head-2",
-        2,
+      ///
+      .fromTo(
+        ".scene1",
         {
-          rotation: 0,
-          x: 0,
-          delay: 5,
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
         },
-        "-=4"
-      )
-      .to(".cow-ear-left-2", 2, {
-        rotation: 0,
-        delay: 4,
-      })
-      .to(
-        ".cow-ear-right-2",
-        2,
         {
-          rotation: 0,
-          x: 0,
-          y: 0,
-        },
-        "-=2"
+          scale: 1,
+          xPercent: 0,
+          yPercent: 0,
+          duration: 0,
+        }
       )
-      .to(
-        ".cow-tail-2",
-        2,
+      .fromTo(
+        ".scene2",
         {
-          rotation: 10,
-          transformOrigin: "right top",
+          opacity: 0,
         },
-        "-=2"
-      )
-      .to(".cow-tail-2", 2, {
-        rotation: 0,
-        transformOrigin: "right top",
-      });
-
-    cowThreeAnimation
-      .to(".cow-head-3", 1, {
-        rotation: 20,
-        x: 18,
-        y: 5,
-        delay: 1.5,
-        transformOrigin: "right top",
-      })
-      .to(".cow-head-3", 1, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-        delay: 3,
-        transformOrigin: "right top",
-      });
-
-    cowFourAnimation
-      .to(".cow-head-4", 1, {
-        rotation: -30,
-        x: -14,
-        y: 5,
-        delay: 3,
-        transformOrigin: "left top",
-      })
-      .to(".cow-head-4", 1, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-        delay: 1,
-      });
-
-    cowSmAnimation
-
-      .to(".cows-head-sm1", 1, {
-        rotation: -10,
-        x: -3,
-        //delay: 3,
-        transformOrigin: "left top",
-      })
-      .to(".cows-head-sm1", 1, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-      })
-      .to(
-        ".cows-head-sm2",
-        1,
         {
-          rotation: -2,
-          x: -2,
-          y: -1,
-          //delay: 3,
-          transformOrigin: "right top",
-        },
-        "-=1.9"
+          opacity: 0,
+        }
       )
-      .to(".cows-head-sm2", 1, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-        //delay: 1,
-      });
-    cowFiveAnimation
-
-      .to(".cow-head-cont-5", 1, {
-        rotation: -35,
-        y: 43,
-        transformOrigin: "right top",
-        delay: 3,
-      })
-
-      .to(
-        ".cow-ear-right-5",
-        0.5,
+      .fromTo(
+        ".grass2",
         {
-          rotation: 35,
-          y: -23,
-          x: -30,
-          transformOrigin: "left bottom",
-          delay: 2,
+          yPercent: -95,
         },
-        "-=0.4"
-      )
-      .to(
-        ".cow-ear-left-5",
-        0.5,
         {
-          rotation: -30,
-          y: -43,
-          transformOrigin: "right bottom",
-        },
-        "-=0.4"
+          yPercent: -95,
+          ease: "sine.out",
+        }
       )
-      .to(".cow-eyes-5", 0.2, {
-        opacity: 0,
-      })
-      .to(
-        ".cow-eyes-close-5",
+      .fromTo(
+        ".hero__herbs-container",
         {
           opacity: 1,
         },
-        "-=0.1"
-      )
-      .to(".cow-eyes-5", {
-        opacity: 1,
-      })
-      .to(".cow-eyes-close-5", {
-        opacity: 0,
-      })
-
-      .to(
-        ".cow-ear-right-5",
-        0.2,
         {
-          rotation: 0,
-          y: 0,
-          x: 0,
-          transformOrigin: "left bottom",
-        },
-        "-=0.2"
-      )
-      .to(
-        ".cow-ear-left-5",
-        0.2,
-        {
-          rotation: 0,
-          y: 0,
-          transformOrigin: "right bottom",
-        },
-        "-=0.2"
-      )
-      .to(
-        ".cow-head-cont-5",
-        0.5,
-        {
-          rotation: 0,
-          y: 0,
-          delay: 1,
-        },
-        "-=1.3"
+          opacity: 1,
+          ease: "sine.out",
+        }
       );
+    // .fromTo(
+    //   ".grass1",
+    //   {
+    //     x: 0,
+    //     y: 0,
+    //   },
+    //   {
+    //     x: 0,
+    //     y: 500,
 
-    ///////////////
-    const grassAnimated1 = new TimelineMax({ repeat: -1 });
-    const grassAnimated2 = new TimelineMax({ repeat: -1 });
-    const grassAnimated3 = new TimelineMax({ repeat: -1 });
-    const grassAnimated4 = new TimelineMax({ repeat: -1 });
-    const grassAnimated5 = new TimelineMax({ repeat: -1 });
-    const grassAnimated6 = new TimelineMax({ repeat: -1 });
-    const grassAnimated7 = new TimelineMax({ repeat: -1 });
-    const grassAnimated8 = new TimelineMax({ repeat: -1 });
-    const grassAnimated9 = new TimelineMax({ repeat: -1 });
-    const grassAnimated10 = new TimelineMax({ repeat: -1 });
-    const grassAnimated11 = new TimelineMax({ repeat: -1 });
-    const grassAnimated12 = new TimelineMax({ repeat: -1 });
+    //     ease: "sine.out",
+    //   }
+    // )
 
-    grassAnimated1
-      .to(".grass-anim1", 4, {
-        rotation: -10,
-        x: -14,
-        y: 5,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim1", 4, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-      });
-
-    grassAnimated2
-      .to(".grass-anim2", 6, {
-        rotation: 20,
-        x: -14,
-        y: 5,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim2", 6, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-      });
-
-    grassAnimated3
-      .to(".grass-anim3", 6, {
-        rotation: 20,
-        x: -14,
-        y: 5,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim3", 6, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-      });
-
-    grassAnimated4
-      .to(".grass-anim4", 6, {
-        rotation: -10,
-        x: -14,
-        y: 5,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim4", 6, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-      });
-
-    grassAnimated5
-      .to(".grass-anim5", 6, {
-        rotation: -7,
-        x: -14,
-        y: 5,
-        delay: 2,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim5", 6, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-      });
-
-    grassAnimated6
-      .to(".grass-anim6", 7, {
-        rotation: 6,
-
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim6", 7, {
-        rotation: 0,
-      });
-    grassAnimated7
-      .to(".grass-anim7", 9, {
-        rotation: -10,
-        x: -14,
-        y: 5,
-        delay: 0.7,
-
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim7", 9, {
-        rotation: 0,
-        x: 0,
-        y: 0,
-        delay: 0.7,
-      });
-    grassAnimated8
-      .to(".grass-anim8", 8, {
-        rotation: 4,
-        delay: 0.3,
-
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim8", 8, {
-        rotation: 0,
-        delay: 0.3,
-      });
-    grassAnimated9
-      .to(".grass-anim9", 7, {
-        rotation: -3,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim9", 7, {
-        rotation: 0,
-      });
-    grassAnimated10
-      .to(".grass-anim10", 7, {
-        rotation: 4,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim10", 7, {
-        rotation: 0,
-      });
-    grassAnimated11
-      .to(".grass-anim11", 10, {
-        rotation: -6,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim11", 10, {
-        rotation: 0,
-      });
-    grassAnimated12
-      .to(".grass-anim12", 5, {
-        rotation: 10,
-        transformOrigin: "bottom",
-      })
-      .to(".grass-anim12", 5, {
-        rotation: 0,
-      });
-
-    //////////////
-    const herbCircleAnimation = new TimelineMax({ repeat: -1 });
-    herbCircleAnimation
-
-      .to(".herb-circle--animated", 0.6, {
-        background: "#CCD390",
-        border: "6px solid #fff",
-        ease: "power1.out",
-      })
-      .to(".herb-circle--animated", 0.6, {
-        background: "#31264F",
-        border: "10px solid #fff",
-        ease: "power1.out",
-      })
-      .to(".herb-circle--animated", 0.6, {
-        background: "#CCD390",
-        border: "6px solid #fff",
-        ease: "power1.out",
-      });
-    //  =========================  xxxxx  ==========================
-    /// cows
-    //gsap.from(".cows-container", { scale: 0, y: 0 });
-    gsap.set(".hero-slider__dots", {
-      autoAlpha: 1,
-      xPercent: -50,
-      yPercent: -50,
-    });
-
-    gsap.set(".go", { autoAlpha: 1, yPercent: -50 });
-
-    gsap.set(".scene2", {
-      opacity: 1,
-      yPercent: 16.9,
-      xPercent: 4.8,
-      scale: 0.03,
-    });
-
-    gsap.set(".scene3", {
-      opacity: 0,
-    });
-
-    gsap.set(".cow-5", { xPercent: 120 });
-    gsap.set(".hero-slide__btns", { opacity: 1 });
-
-    //transform: scale(0.09) translate(-198px, 413px);
-    var slides = $(".hero-slide"),
-      activeSlide = $(".slide.active"),
-      // next = $(".go-next"),
-      // prev = $(".go-prev"),
-      moveSlideTL = gsap.timeline();
-
-    // cow disappear
-    const cowDisapear = new TimelineMax({});
-    // Animaciones individuales para cada slider ======
-
-    const allSlides = [].slice.call(slides);
-    let animations = [];
-
-    for (let [i] of allSlides.entries()) {
-      animations[i] = gsap.timeline({});
-    }
-
-    animations[0]
-
-      .from(
-        ".hero__overlay",
+    // TIMELINE: Part 2
+    part2_tl
+      // NEW ANIMATION
+      .fromTo(
+        ".cows-container",
         {
-          autoAlpha: 0,
+          scale: 1,
+          yPercent: 0,
         },
-        "-=0.9"
-      )
-
-      .from(".grass-container-2", {
-        y: 813,
-      })
-      // })
-      .reverse(3);
-    animations[1]
-
-      .to(
-        ".grass1",
         {
-          yPercent: 100,
-        },
-        "-=0.9"
+          scale: 1,
+          yPercent: 0,
+          ease: "sine.out",
+        }
       )
-      .to(
-        ".grass-anim",
+      ///
+      .fromTo(
+        ".scene2",
         {
-          yPercent: 100,
+          opacity: 0,
         },
-        "-=0.9"
-      )
-      // .to(
-      //   ".scene1",
-      //   {
-      //     scale: 2,
-
-      //     yPercent: 0,
-      //     xPercent: 0,
-      //   },
-      //   "-=0.3"
-      // )
-      .to(
-        ".grass-container-2",
         {
-          y: -813,
-          delay: -0.5,
-          duration: 1,
-          ease: "power4.inOut",
-        },
-        "-=0.3"
+          opacity: 0,
+        }
       )
-
-      // .to(
-      //   ".cows-container",
-      //   {
-      //     scale: 2,
-      //     y: 200,
-      //     delay: -0.5,
-      //     ease: "expoScale(1,2, power2.inOut)",
-      //   },
-      //   "-=0.2"
-      // )
-
-      // .to(".grass-animated2", {
-      //   y: 0,
-      //   delay: -0.5,
-      // })
-
-      .to(
-        ".hero__overlay",
+      .fromTo(
+        ".scene1",
         {
-          autoAlpha: 1,
-          duration: 1,
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
         },
-        "-=0.9"
+        {
+          scale: 1,
+          xPercent: 0,
+          yPercent: 0,
+        }
       )
+      .fromTo(
+        ".grass2",
+        {
+          yPercent: -95,
+        },
+        {
+          yPercent: 30,
 
-      .to(".hero__herbs-container", {
-        autoAlpha: 1,
-      })
-      .set(".cow-5", {
-        autoAlpha: 0,
-      })
-
-      .reverse();
-
-    animations[2]
-      .set(".cow-5", {
-        autoAlpha: 0,
-      })
-      .to(".hero__overlay", {
-        autoAlpha: 0,
-        duration: 1,
-      })
-      .to(
+          ease: "sine.out",
+        }
+      )
+      .fromTo(
         ".hero__herbs-container",
         {
-          autoAlpha: 0,
-          duration: 0.3,
+          opacity: 1,
         },
-        "-=0.9"
-      )
-
-      .to(".grass-anim", {
-        yPercent: 300,
-      })
-
-      .to(
-        ".grass-container-2",
         {
-          y: 813,
-          delay: -0.5,
-          duration: 1,
+          opacity: 0,
+          duration: 0.2,
+          ease: "sine.out",
         },
-        "-=0.9"
-      )
+        "-=0.1"
+      );
 
-      .to(
-        ".grass1",
-        {
-          yPercent: 100,
-        },
-        "-=0.9"
-      )
-
-      // .to(
-      //   ".scene1",
-      //   {
-      //     scale: 1,
-      //     duration: 1,
-      //     yPercent: 0,
-      //     xPercent: 0,
-      //   },
-      //   "-=0.3"
-      // )
-
-      .to(
+    // TIMELINE: Part 3
+    part3_tl
+      // NEW ANIMATION
+      .fromTo(
         ".cows-container",
         {
-          y: 1,
-          delay: -0.5,
           scale: 1,
+          yPercent: 0,
+        },
+        {
+          scale: 1,
+          yPercent: 0,
+          ease: "sine.out",
+        }
+      )
+      ///
+      .fromTo(
+        ".scene2",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 0,
+        }
+      )
+      .fromTo(
+        ".scene1",
+        {
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
+        },
+        {
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
+        }
+      )
+      .fromTo(
+        ".grass2",
+        {
+          yPercent: 30,
+        },
+        {
+          yPercent: 30,
+          ease: "sine.out",
+        }
+      )
+      .fromTo(
+        ".hero__herbs-container",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 0,
+        }
+      );
+
+    // TIMELINE: Part 4
+    part4_tl
+      .fromTo(
+        ".scene1",
+        {
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
+        },
+        {
+          scale: 5,
+          xPercent: -30,
+          yPercent: -60,
+
+          ease: "expoScale(1, 5)",
+        },
+        "-=0.5"
+      )
+      .fromTo(
+        ".scene2",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 0,
+        }
+      )
+
+      // NEW ANIMATION
+      .fromTo(
+        ".cows-container",
+        {
+          scale: 1,
+          yPercent: 0,
+        },
+        {
+          scale: 3,
+          yPercent: 30,
+          ease: "expoScale(1, 3)",
+        },
+        "-=0.5"
+      );
+
+    ///
+    // .fromTo(
+    //   ".grass1",
+    //   {
+    //     x: 0,
+    //     opacity: 1,
+    //     y: 200,
+    //   },
+    //   {
+    //     y: 500,
+    //     duration: 1,
+
+    //     ease: "sine.out",
+    //   }
+    // )
+
+    // TIMELINE: Part 5
+    part5_tl
+      // NEW ANIMATION
+      ///
+      .fromTo(
+        ".scene1",
+        {
+          scale: 5,
+          xPercent: -30,
+          yPercent: -60,
+        },
+        {
+          scale: 27.09,
+          yPercent: -448.9,
+          xPercent: -129.1,
+          ease: "expoScale(5, 27.09)",
+        }
+      )
+      .fromTo(
+        ".scene2",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 0,
         },
         "-=0.3"
-      )
-
-      // .to(".grass1", {
-      //   yPercent: 200,
-      //   duration: 1,
-      // })
-      // .to(".grass-container-2", {
-      //   y: 813,
-      //   duration: 1,
-      // })
-
-      // .to(".scene1", {
-      //   scale: 5.6,
-      //   yPercent: -94,
-
-      //   duration: 1,
-      //   ease: "expoScale(1, 5.6, power2.inOut)",
-      // })
-      .to("#slide01", {
-        scale: 7,
-        duration: 2,
-        yPercent: -157,
-        xPercent: -36,
-        delay: 1,
-        ease: "expoScale(1,7, power2.inOut)",
-      })
-
-      .to(
-        ".cows-container",
-        {
-          yPercent: 100,
-          delay: -0.5,
-          scale: 2,
-          ease: "expoScale(1,2, power2.inOut)",
-        },
-        "-=1.4"
-      )
-      .to(".cow-5", {
-        xPercent: 20,
-        autoAlpha: 1,
-      })
-      .reverse();
-
-    animations[3]
-
-      .to(".cow-5", {
-        yPercent: 200,
-        xPercent: 200,
-        duration: 1,
-        scale: 2,
-        ease: "expoScale(1,2, power2.inOut)",
-      })
-      // .to(".scene1", {
-      //   scale: 10,
-      //   duration: 1,
-      //   xPercent: -30,
-      // })
-
-      // .to(".grass1", {
-      //   opacity: 0,
-      // })
-      // .set(".cows-container", {
-      //   opacity: 0,
-      // })
-
-      // .to(".cow-5", {
-      //   yPercent: 100,
-      // })
-
-      // .set(".scene1", {
-      //   scale: 8,
-      //   yPercent: -120,
-      // })
-
-      .to(
-        "#slide01",
-        {
-          scale: 40,
-          duration: 1,
-          yPercent: -774,
-          xPercent: -186,
-          ease: "expoScale(7,40, power2.inOut)",
-        },
-        "-=0.8"
-      )
-      .set(".scene2-2", {
-        opacity: 1,
+      );
+    part6_tl.fromTo(
+      ".scene2",
+      {
         scale: 1,
         yPercent: 0,
         xPercent: 0,
-      })
-      .set(".scene3-2", {
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        yPercent: 0,
+        xPercent: 0,
         opacity: 1,
-      })
-      .reverse();
-
-    animations[4]
-
-      .to(".scene-container", {
-        scale: 46,
-        duration: 1,
-        yPercent: -1150,
-        xPercent: -216,
-        ease: "expoScale(40,46, power2.inOut)",
-      })
-
-      // .set(".cow-5", {
-      //   autoAlpha: 0,
-      // })
-
-      // .to(".grass1", {
-      //   opacity: 0,
-      // })
-      // .set(".cows-container", {
-      //   opacity: 0,
-      // })
-
-      .to(".scene3", {
-        opacity: 1,
-      })
-
-      .to(
-        ".hero-slide__btns",
-
-        {
-          opacity: 1,
-        }
-      )
-      .reverse();
-
-    //translate(11%, -42%) scale(11)
-
-    // ============================
-    function dotClick() {
-      var slideFrom = $(".hero-slide.active"),
-        sectionToIndex = $(this).index(),
-        sectionToIndex = $(this).index(),
-        slideTo = slides.eq(sectionToIndex);
-
-      var indexFrom = slideFrom.index();
-
-      if (indexFrom !== sectionToIndex && !moveSlideTL.isActive()) {
-        moveToSlide(slideFrom, slideTo);
-      }
-    }
-
-    // =============================
-    // function nextClick() {
-    //   if (!moveSlideTL.isActive()) {
-    //     var slideFrom = $(".hero-slide.active"),
-    //       sectionToIndex = slides.index(slideFrom);
-
-    //     if (sectionToIndex !== slides.length - 1) {
-    //       slideTo = slides.eq(sectionToIndex + 1);
-    //       moveToSlide(slideFrom, slideTo);
-    //     }
-    //   }
-    // }
-
-    // function prevClick() {
-    //   if (!moveSlideTL.isActive()) {
-    //     var slideFrom = $(".hero-slide.active"),
-    //       sectionToIndex = slides.index(slideFrom);
-
-    //     if (sectionToIndex != 0) {
-    //       slideTo = slides.eq(sectionToIndex - 1);
-    //       moveToSlide(slideFrom, slideTo);
-    //     }
-    //   }
-    // }
-
-    // ==============================
-    function moveToSlide(slideFrom, slideTo) {
-      if (slides.index(slideFrom) < slides.index(slideTo)) {
-        // vorwärts
-
-        moveSlideTL = gsap
-          .timeline({
-            onComplete: setActiveSlide,
-            onCompleteParams: [slideTo, slideFrom],
-          })
-          .to(
-            slideTo,
-            {
-              className: "hero-slide active",
-              duration: 1,
-            },
-            "-=0.9"
-          )
-          .to(
-            slideFrom,
-            {
-              className: "hero-slide",
-              duration: 1,
-            },
-            "-=0.9"
-          );
-      } else {
-        moveSlideTL = gsap
-          .timeline({
-            onComplete: setActiveSlide,
-            onCompleteParams: [slideTo, slideFrom],
-          })
-          .set(slideTo, {
-            className: "hero-slide active",
-          })
-
-          .to(
-            slideFrom,
-            {
-              className: "hero-slide",
-              duration: 1,
-            },
-            "-=0.9"
-          );
-      }
-    }
-
-    function setActiveSlide(active, last) {
-      var currentSlideIndex = slides.index(active);
-      var lastSlideIndex = slides.index(last);
-
-      //animations[currentSlideIndex].reversed(false);
-
-      gsap.to(".hero-slider__dot.active", {});
-      $(".hero-slider__dot.active").removeClass("active");
-      $(".hero-slider__dot").eq(currentSlideIndex).addClass("active");
-
-      if (currentSlideIndex == 0) {
-      } else {
-        // gsap.set(".go-prev", { autoAlpha: 1 });
-      }
-      if (currentSlideIndex == slides.length - 1) {
-      } else {
-        // gsap.set(".go-next", { autoAlpha: 1 });
-      }
-    }
-
-    // ================================
-    function init() {
-      for (var i = 0; i < slides.length; i++) {
-        var navDots = $("<div></div>")
-          .addClass("hero-slider__dot")
-          .appendTo(".hero-slider__dots");
-        gsap.set(".hero-slider__dot:first-child", {
-          className: "hero-slider__dot active",
-
-          transformOrigin: "center",
-        });
-        navDots.on("click", dotClick);
-      }
-
-      // next.on("click", nextClick);
-      // prev.on("click", prevClick);
-    }
-
-    init();
-    $(document).ready(function () {
-      var slide01 = $("#slide01");
-      if (slide01.hasClass("active")) {
-      }
-    });
-    $(".hero-slider").bind(
-      "mousewheel DOMMouseScroll",
-      function onMouseWheel(event) {
-        event.preventDefault();
-        //Normalize event wheel delta
-
-        var delta =
-          event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
-
-        if (delta < -1) {
-          //scrolling down -> next slide
-
-          if (!moveSlideTL.isActive()) {
-            // check again in a second
-
-            var slideFrom = $(".hero-slide.active");
-            var sectionToIndex = slides.index(slideFrom);
-            console.log(sectionToIndex);
-            /// conditions
-            // GO 2 SLIDE
-            if (sectionToIndex === 0 && !animations[1].isActive()) {
-              animations[1].play();
-              setTimeout(function () {
-                slideTo = slides.eq(sectionToIndex + 1);
-                moveToSlide(slideFrom, slideTo);
-              }, 2000);
-            }
-            // GO 3 SLIDE
-            if (sectionToIndex === 1 && !animations[1].isActive()) {
-              animations[2].play();
-              setTimeout(function () {
-                slideTo = slides.eq(sectionToIndex + 1);
-                moveToSlide(slideFrom, slideTo);
-              }, 2000);
-            }
-            // GO 4 SLIDE
-            if (sectionToIndex === 2 && !animations[2].isActive()) {
-              console.log(sectionToIndex);
-
-              slideTo = slides.eq(sectionToIndex + 1);
-              moveToSlide(slideFrom, slideTo);
-              animations[3].play();
-            }
-            // GO 5 SLIDE
-            if (sectionToIndex === 3 && !animations[3].isActive()) {
-              var slideTo = slides.eq(sectionToIndex + 1);
-              moveToSlide(slideFrom, slideTo);
-              animations[4].play();
-            } else if (sectionToIndex === 4 || sectionToIndex === -1) {
-              var slideTo = slides.eq(sectionToIndex + 1);
-            } else {
-              return false;
-            }
-          }
-        } else if (delta > 1) {
-          // -> prev
-
-          if (!moveSlideTL.isActive()) {
-            if (!moveSlideTL.isActive()) {
-              var slideFrom = $(".hero-slide.active"),
-                sectionToIndex = slides.index(slideFrom);
-              console.log(sectionToIndex);
-              // GO BACK TO 1 SLIDE
-              if (
-                sectionToIndex === 1 &&
-                !animations[1].isActive() &&
-                !animations[2].isActive()
-              ) {
-                animations[1].reverse(0);
-
-                slideTo = slides.eq(sectionToIndex - 1);
-                moveToSlide(slideFrom, slideTo);
-              }
-              // GO BACK TO 2 SLIDE
-              else if (
-                sectionToIndex === 2 &&
-                !animations[2].isActive() &&
-                !animations[3].isActive()
-              ) {
-                //  showCow.pause();
-                animations[2].reverse(0);
-
-                setTimeout(function () {
-                  slideTo = slides.eq(sectionToIndex - 1);
-                  moveToSlide(slideFrom, slideTo);
-                }, 4000);
-              }
-              // GO BACK TO 3 SLIDE
-              else if (
-                sectionToIndex === 3 &&
-                !animations[2].isActive() &&
-                !animations[3].isActive() &&
-                !animations[4].isActive()
-              ) {
-                animations[3].reverse(0);
-
-                slideTo = slides.eq(sectionToIndex - 1);
-                moveToSlide(slideFrom, slideTo);
-              } // GO BACK TO 4
-              else if (
-                (sectionToIndex === 4 && !animations[4].isActive()) ||
-                sectionToIndex === -1
-              ) {
-                animations[4].reverse(0);
-
-                slideTo = slides.eq(sectionToIndex - 1);
-                moveToSlide(slideFrom, slideTo);
-              }
-            }
-          }
-        }
-        //
+        duration: 0,
+        ease: "sine.out",
       }
     );
+    part7_tl
+
+      // NEW ANIMATION
+      ///
+      .fromTo(
+        ".scene2",
+        {
+          scale: 1,
+          yPercent: 0,
+          xPercent: 0,
+          opacity: 1,
+        },
+        {
+          scale: 14,
+          yPercent: -60,
+          xPercent: -20,
+          opacity: 1,
+          ease: "sine.out",
+        }
+      );
+
+    // TIMELINE: Main
+    scene
+
+      .set(".grass1", { x: 0, y: 0 })
+      .set(".grass2", { x: 0, yPercent: 100 })
+      .set(".scene1", { xPercent: 0, yPercent: 0, scale: 1 })
+      .set(".scene2", { xPercent: 0, yPercent: 0, scale: 1, opacity: 0 })
+      .set(".hero__herbs-container", { opacity: 0 })
+
+      .set(".cow-5", { xPercent: 200, yPercent: 0 })
+      .add(part0_tl)
+      .add(part1_tl)
+      .add(part2_tl)
+      .add(part3_tl)
+      .add(part4_tl)
+      .add(part5_tl)
+      .add(part6_tl)
+      .add(part7_tl);
+    },
+
+    pauseScrollTrigger() {
+      ScrollTrigger.kill()
+    },
+    doSmth() {
+//console.log(1)
+    }
+
+
+   
   },
+mounted() {
+
+  this.scrollAnimation(),
+
+
+      window.addEventListener('click',function(event) {
+        if (document.querySelector('body').classList.contains('modal-open') && event.target != this.document.querySelectorAll('.modal-content')) {
+          console.log(11)
+        }
+      });
+ 
+  
+
+
+  }
 };
 </script>
 <style lang="scss">
-#slide01 {
-  background-size: cover !important;
-  background-position: center center;
-  background: url("~assets/img/hero-slider/scene12.svg");
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-repeat: no-repeat;
-}
-
-.hero {
-  height: 100vh;
-  widows: 100vw;
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 .hero-slide__btns {
   z-index: 100;
   display: flex;
@@ -1461,129 +1091,6 @@ export default {
     margin-left: 80px;
     margin-right: 80px;
   }
-}
-.hero-slider__dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  width: inherit;
-  z-index: 100;
-  visibility: hidden;
-}
-.hero-slider__dot {
-  position: relative;
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.5);
-
-  border-radius: 50%;
-  border: 1px solid transparent;
-  margin-right: 7px;
-  float: left;
-  cursor: pointer;
-}
-.hero-slider__dot.active {
-  background-color: $color-primary;
-  opacity: 0.8;
-}
-.hero-slider__dot:last-of-type {
-  margin-right: 0px;
-}
-
-.hero-slider__dot:hover {
-  background-color: rgba(255, 255, 255, 0.65);
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.go {
-  width: 25px;
-  stroke: #fff;
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  z-index: 12;
-}
-
-.go-prev,
-.go-next {
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  left: 5px;
-}
-
-.go-next {
-  left: calc(100% - 32px);
-}
-
-.hero-slider {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  max-height: 1920px;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 10;
-}
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#slide02 .wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  text-align: center;
-  height: 100px;
-  overflow: hidden;
-}
-
-.scene4,
-.scene5,
-.scene3,
-.scene33,
-.scene {
-  z-index: 100;
-  width: 100vw;
-  height: auto;
-  top: 0;
-}
-.scene3 {
-  z-index: 10;
-}
-.grass2 {
-  bottom: -74%;
-  z-index: 96;
-  width: 100vw;
-  height: auto;
-}
-.grass1 {
-  z-index: 91;
-  bottom: -5%;
-  width: 100vw;
-  height: auto;
-}
-.scene1,
-.scene2,
-.scene3,
-.scene33,
-.scene4,
-.scene5 {
-  z-index: 10;
-  width: 100vw;
-  top: 0;
-  height: 100%;
-}
-.scene4 {
-  z-index: 121;
 }
 
 .hero__herbs-container {
@@ -1612,302 +1119,7 @@ export default {
   z-index: 92;
   width: 100vw;
 }
-.grass-animated2 {
-  position: absolute;
-  bottom: 0;
-  z-index: 99;
-  width: 100vw;
-}
-.grass-container-2 {
-  position: absolute;
-  bottom: -813px;
-  z-index: 99;
-  width: 100vw;
-}
-.grass2 {
-  bottom: 0px;
-  width: 100vw;
-}
-.grass3 {
-  z-index: 1000;
-  bottom: 0;
-  width: 100vw;
-}
-.grass-anim {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.grass-anim1 {
-  left: 60px;
-}
-.grass-anim2 {
-  left: 41%;
-}
-.grass-anim3 {
-  left: 8%;
-}
-.grass-anim4 {
-  left: 85%;
-}
-.grass-anim5 {
-  left: 70%;
-}
-.grass-anim6 {
-  left: 5%;
-  bottom: 116px;
-}
-.grass-anim7 {
-  left: 76%;
-  bottom: 131px;
-}
-.grass-anim8 {
-  left: 57%;
-  bottom: 0px;
-}
-.grass-anim9 {
-  left: 84%;
-  bottom: 44px;
-}
-.grass-anim10 {
-  left: 87%;
-  bottom: 56px;
-}
-.grass-anim11 {
-  left: 1%;
-  bottom: 294px;
-}
-.grass-anim12 {
-  left: 22%;
-  bottom: 52px;
-}
 
-.hero__overlay {
-  width: 100vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  background: transparent;
-
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 100;
-  opacity: 0;
-}
-
-.cows-container {
-  z-index: 90;
-  max-width: 1500px;
-  height: 100%;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  position: relative;
-  overflow: hidden;
-}
-.cow-1 {
-  position: absolute;
-  display: block;
-  z-index: 100;
-  max-width: 470px;
-  width: 100%;
-  height: 400px;
-  top: 58vh;
-  right: -53px;
-}
-.cow-2 {
-  position: absolute;
-  display: block;
-  z-index: 99;
-  max-width: 300px;
-  width: 100%;
-  height: 200px;
-  top: 62vh;
-  left: 94px;
-}
-.cow-3 {
-  position: absolute;
-  display: block;
-  z-index: 97;
-  max-width: 200px;
-  width: 100%;
-  height: 122px;
-  top: 70vh;
-  right: 396px;
-}
-.cow-4 {
-  position: absolute;
-  display: block;
-  z-index: 95;
-  max-width: 130px;
-  width: 100%;
-  height: 80px;
-
-  top: 72vh;
-  left: 528px;
-}
-.cow-5 {
-  position: absolute;
-  display: block;
-  z-index: 39;
-  max-width: 890px;
-  width: 100%;
-  height: 960px;
-  top: 68%;
-  left: 60%;
-}
-.cows-body-sm {
-  z-index: 102;
-}
-.cows-sm {
-  position: absolute;
-  display: block;
-  z-index: 90;
-  max-width: 130px;
-  width: 100%;
-  height: 55px;
-  top: 70vh;
-  right: 627px;
-}
-.img-absolute {
-  position: absolute;
-  display: block;
-}
-.cow-tail-1 {
-  right: 88px;
-  top: 150px;
-}
-.cow-head-1 {
-  top: 19px;
-  left: 28px;
-  z-index: 101;
-}
-.cow-ear-left-1 {
-  top: 23px;
-  left: 36px;
-}
-.cow-ear-right-1 {
-  top: 68px;
-  left: 108px;
-}
-/* cow 2 */
-.cow-tail-2 {
-  top: 53px;
-}
-.cow-leg-2 {
-  right: 61px;
-  top: 154px;
-}
-.cow-head-2 {
-  top: 25px;
-  right: -21px;
-  z-index: 101;
-}
-.cow-ear-left-2 {
-  top: 36px;
-  right: 31px;
-  z-index: 100;
-}
-.cow-ear-right-2 {
-  top: 43px;
-  right: -14px;
-}
-/* cow 3*/
-.cow-head-3 {
-  top: 6px;
-  left: -1px;
-  z-index: 101;
-}
-/* cow 4*/
-.cow-head-4 {
-  top: -5px;
-  right: 0px;
-  z-index: 101;
-}
-/* cow 5 & 6*/
-.cows-head-sm1 {
-  top: 0px;
-  left: 41px;
-  z-index: 101;
-}
-/* cow 5 */
-.cow-head-cont-5 {
-  position: absolute;
-  z-index: 100;
-}
-.cow-head-5 {
-  z-index: 101;
-  top: -201px;
-  left: -68px;
-}
-.cow-ear-left-5 {
-  top: -152px;
-  left: -52px;
-}
-.cow-ear-right-5 {
-  top: -51px;
-  left: 153px;
-}
-.cow-eyes-5 {
-  z-index: 102;
-  left: -21px;
-  top: -35px;
-}
-.cow-eyes-close-5 {
-  opacity: 0;
-}
-.cows-head-sm2 {
-  top: 16px;
-  right: 35px;
-  z-index: 101;
-}
-#slide03 .scene1 {
-  opacity: 0;
-}
-
-/* hero herbs */
-.scene53,
-.scene43 {
-  width: 100vw;
-  height: auto;
-}
-.hero__herb-img {
-  background-color: #ccd390;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  overflow: hidden;
-  height: 177px;
-  width: 177px;
-  position: relative;
-  box-sizing: border-box;
-}
-.hero__herb {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.hero__herb1 {
-  top: 53%;
-}
-.hero__herb2 {
-  top: 56%;
-}
-.hero__herb3 {
-  top: 59%;
-}
-.hero__herb4 {
-  top: 59%;
-}
-.hero__herb5 {
-  top: 56%;
-}
-.scene5-test {
-  z-index: 120;
-
-  opacity: 1;
-  transform-origin: center center;
-}
 /// next-section
 .next-section {
   height: 100vh;
@@ -1950,125 +1162,102 @@ export default {
     margin-right: 80px;
   }
 }
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background-color: transparent;
-  overflow: hidden;
-}
 
-.hero-slider__dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  width: inherit;
-  z-index: 100;
-  visibility: hidden;
-}
-.hero-slider__dot {
-  position: relative;
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.5);
-
+.hero__herb-img {
+  background-color: #ccd390;
   border-radius: 50%;
-  border: 1px solid transparent;
-  margin-right: 7px;
-  float: left;
-  cursor: pointer;
-}
-
-.hero-slider__dot:last-of-type {
-  margin-right: 0px;
-}
-
-.hero-slider__dot:hover {
-  background-color: rgba(255, 255, 255, 0.65);
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.go {
-  width: 25px;
-  stroke: #fff;
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  z-index: 12;
-}
-
-.go-prev,
-.go-next {
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  left: 5px;
-}
-
-.go-next {
-  left: calc(100% - 32px);
-}
-
-.hero-slider {
+  border: 6px solid #fff;
+  overflow: hidden;
+  height: 177px;
+  width: 177px;
   position: relative;
-  left: 0;
-  top: 0;
-  width: 100%;
-  max-height: 1920px;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 10;
+  box-sizing: border-box;
 }
-.hero-slide {
+.hero__herb {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.next-section {
   height: 100vh;
+  width: 100vw;
+  background: #6a8086;
+}
+.body-fixed {
+  overflow-x: scroll;
+  position: fixed;
+  height: 100%;
+
+  width: 100vw;
+}
+
+F .hero-slide__btns {
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 50%;
+  top: 74%;
+  transform: translateX(-50%);
+}
+.img-absolute {
+  position: absolute;
+}
+.hero__container {
+  width: 100%;
+  height: 100vh !important;
+  display: grid;
+  place-items: center;
+  position: fixed;
   overflow: hidden;
 }
+.wrapper {
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+ position: fixed !important;
+  overflow: hidden;
 
-/* .scene4,
-.scene5,
-.scene {
-  z-index: 100;
-  width: 100vw;
-  height: auto;
-  top: 0;
-} */
-
-.grass2 {
-  bottom: -74%;
-  z-index: 96;
-  width: 100vw;
-  height: auto;
+  position: relative;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
+
 .grass1 {
-  z-index: 91;
-  bottom: -5%;
+  position: absolute;
+  z-index: 10;
   width: 100vw;
-  height: auto;
+  bottom: 0;
+}
+.grass2 {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  bottom: -100%;
 }
 .scene1,
 .scene2 {
-  z-index: 10;
-  width: 100vw;
-  top: 0;
-}
-.scene-container {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  z-index: 1;
+ 
   top: 0;
+ 
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 57% 50%;
 }
-.scene4 {
-  z-index: 121;
-}
-
+/* slide 2 */
 .hero__herbs-container {
   position: absolute;
 
@@ -2089,115 +1278,154 @@ export default {
 .hero__herb {
   position: relative;
 }
-.grass-animated1 {
+.hero__herb-img {
+  background-color: #ccd390;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  overflow: hidden;
+  height: 177px;
+  width: 177px;
+  position: relative;
+  box-sizing: border-box;
+}
+.hero__herb {
   position: absolute;
-  bottom: 0;
-  z-index: 92;
-  width: 100vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-.grass-animated2 {
+.hero__herb1 {
+  top: 53%;
+}
+.hero__herb2 {
+  top: 56%;
+}
+.hero__herb3 {
+  top: 59%;
+}
+.hero__herb4 {
+  top: 59%;
+}
+.hero__herb5 {
+  top: 56%;
+}
+/* slide 3 */
+.cow-5 {
   position: absolute;
-  bottom: 0;
-  z-index: 99;
-  width: 100vw;
+  display: block;
+  z-index: 39;
+  max-width: 890px;
+  width: 100%;
+  height: 960px;
+  top: 68%;
+  left:100%;
 }
-.grass-container-2 {
+.cow-head-cont-5 {
   position: absolute;
-  bottom: -813px;
-  z-index: 99;
-  width: 100vw;
-}
-.grass-container-3 {
-  position: absolute;
-  bottom: 0px;
-  z-index: 99;
-  width: 100vw;
-}
-.grass2 {
-  bottom: 0px;
-  width: 100vw;
-}
-.grass3 {
-  z-index: 1000;
-  bottom: 0;
-  width: 100vw;
-}
-.grass-anim {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.grass-anim1 {
-  left: 60px;
-}
-.grass-anim2 {
-  left: 41%;
-}
-.grass-anim3 {
-  left: 8%;
-}
-.grass-anim4 {
-  left: 85%;
-}
-.grass-anim5 {
-  left: 70%;
-}
-.grass-anim6 {
-  left: 5%;
-  bottom: 116px;
-}
-.grass-anim7 {
-  left: 76%;
-  bottom: 131px;
-}
-.grass-anim8 {
-  left: 57%;
-  bottom: 0px;
-}
-.grass-anim9 {
-  left: 84%;
-  bottom: 44px;
-}
-.grass-anim10 {
-  left: 87%;
-  bottom: 56px;
-}
-.grass-anim11 {
-  left: 1%;
-  bottom: 294px;
-}
-.grass-anim12 {
-  left: 22%;
-  bottom: 52px;
-}
-
-.hero__overlay {
-  width: 100vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  background: transparent;
-
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   z-index: 100;
+}
+.cow-head-5 {
+  z-index: 101;
+  top: -201px;
+  left: -68px;
+}
+.cow-ear-left-5 {
+  top: -152px;
+  left: -52px;
+}
+.cow-ear-right-5 {
+  top: -51px;
+  left: 153px;
+}
+.cow-eyes-5 {
+  z-index: 102;
+  left: -21px;
+  top: -35px;
+}
+.cow-eyes-close-5 {
   opacity: 0;
 }
-h1 {
-  z-index: 1000;
-  position: fixed;
-  font-size: 20em;
+
+section {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  background-color:#ccd390;
 }
+[data-scrollbar] {
+    display: block;
+    position: relative;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scroll-area {
+position: relative;
+height: 100%;
+}
+.fix-scroll {
+  position: fixed;
+transform: none !important;
+}
+.scrollbar-track {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    background: #3A0C53;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: opacity 0.5s 0.5s ease-out;
+    transition: opacity 0.5s 0.5s ease-out;
+}
+
+.scrollbar-track.show,
+.scrollbar-track:hover {
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.scrollbar-track-x {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.scrollbar-track-y {
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 0;
+}
+
 .cows-container {
-  z-index: 90;
+  z-index: 4;
   max-width: 1500px;
   height: 100%;
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  position: relative;
+  position:absolute;
   overflow: hidden;
-  bottom: -50px;
 }
 .cow-1 {
   position: absolute;
@@ -2354,67 +1582,5 @@ h1 {
   top: 16px;
   right: 35px;
   z-index: 101;
-}
-
-.hero__herb-img {
-  background-color: #ccd390;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  overflow: hidden;
-  height: 177px;
-  width: 177px;
-  position: relative;
-  box-sizing: border-box;
-}
-.hero__herb {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.hero__herb1 {
-  top: 53%;
-}
-.hero__herb2 {
-  top: 56%;
-}
-.hero__herb3 {
-  top: 59%;
-}
-.hero__herb4 {
-  top: 59%;
-}
-.hero__herb5 {
-  top: 56%;
-}
-
-.next-section {
-  height: 100vh;
-  width: 100vw;
-  background: #6a8086;
-}
-.body-fixed {
-  overflow-x: scroll;
-  position: fixed;
-  height: 100%;
-
-  width: 100vw;
-}
-
-.scene3 {
-  z-index: 200;
-  display: block;
-  width: 100vw;
-}
-
-.hero-slide__btns {
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  left: 50%;
-  top: 74%;
-  transform: translateX(-50%);
 }
 </style>

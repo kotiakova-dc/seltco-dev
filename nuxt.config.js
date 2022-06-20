@@ -33,11 +33,12 @@ export default {
   plugins: [
     "@/plugins/vue-svgicon.js",
 
+   { src: "~/plugins/smooth-scroll.js", mode: "client" },
     { src: "~/plugins/vue-scrollactive.js", mode: "client" },
 
     { src: "~/plugins/device.js", mode: "client" },
     { src: "~/plugins/dev-device.js", mode: "client" },
-    { src: "~/plugins/smooth-scroll.js", mode: "client" },
+ 
     { src: "~/plugins/vue-fullpage.js", mode: "client" },
     { src: "~/plugins/ymapPlugin.js", mode: "client" },
     { src: "~/plugins/fullpage.js", mode: "client" },

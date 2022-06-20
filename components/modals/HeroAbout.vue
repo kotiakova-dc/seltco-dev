@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-modal id="hero-modal-about" title="О ферме">
-      <b-container>
+    <b-modal id="hero-modal-about" title="О ферме" >
+      <b-container @click="$emit('test')">
         <b-row>
           <b-col cols="12">
             <div
@@ -115,6 +115,12 @@ export default {
       ],
     };
   },
+   methods: {
+    submit() {
+      this.$emit('submit')
+    }
+  }
+  
 };
 </script>
 <style lang="scss" scoped>
