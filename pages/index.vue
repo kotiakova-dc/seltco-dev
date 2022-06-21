@@ -1,16 +1,8 @@
 <template>
   <div>
-
     <HeroSlider />
   </div>
 </template>
 
-<script>
-// сначала надо распаковать архив с кадрами. Где они?
-// отключи сервер. который nuxt dev. Он иногда не дает перезаписать старые кадры
-// Кадры залили. теперь ставим количество кадров.
-</script>
-<style lang="scss">
-
-
-</style>
+<script></script>
+<style lang="scss"></style>

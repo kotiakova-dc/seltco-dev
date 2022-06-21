@@ -1,26 +1,28 @@
 <template>
   <div>
-    
-     <div class="hero__container" id="container">
+    <div class="hero__container" id="container">
       <div class="wrapper" id="wrapper">
-         <div class="hero-slide__btns">
-      <b-button @click="pauseScrollTrigger"
-        class="btn btn--glassmorph hero-slide__btn"
-        v-b-modal.hero-modal-about
-        >О ферме</b-button
-      >
-      <b-button @click="pauseScrollTrigger"
-        class="btn btn--glassmorph hero-slide__btn"
-        v-b-modal.hero-modal-docs
-        >Документы</b-button
-      >
-      <b-button @click="pauseScrollTrigger"
-        class="btn btn--glassmorph hero-slide__btn"
-        v-b-modal.hero-modal-news
-        >Новости</b-button
-      >
-    </div>
- 
+        <div class="hero-slide__btns">
+          <b-button
+            @click="pauseScrollTrigger"
+            class="btn btn--glassmorph hero-slide__btn"
+            v-b-modal.hero-modal-about
+            >О ферме</b-button
+          >
+          <b-button
+            @click="pauseScrollTrigger"
+            class="btn btn--glassmorph hero-slide__btn"
+            v-b-modal.hero-modal-docs
+            >Документы</b-button
+          >
+          <b-button
+            @click="pauseScrollTrigger"
+            class="btn btn--glassmorph hero-slide__btn"
+            v-b-modal.hero-modal-news
+            >Новости</b-button
+          >
+        </div>
+
         <img
           :src="require('@/assets/img/hero-slider/grass2.png')"
           alt=""
@@ -181,8 +183,6 @@
         />
       </div>
     </div>
-
-   
 
     <!--
         <div class="cows-container">
@@ -550,533 +550,537 @@
     <div class="next-section"></div>
     <div class="next-section"></div>
 
-    <ModalsHeroAbout v-on:test = "doSmth" />
+    <ModalsHeroAbout v-on:test="doSmth" />
     <ModalsHeroDocs />
     <ModalsHeroNews />
   </div>
 </template>
 <script>
-import SmoothScrollbar from 'smooth-scrollbar'
+import SmoothScrollbar from "smooth-scrollbar";
 export default {
   methods: {
     scrollAnimation() {
- let bodyScrollBar = SmoothScrollbar.init(document.body, {
-      damping: 0.1,
-      delegateTo: document,
-    });
+      let bodyScrollBar = SmoothScrollbar.init(document.body, {
+        damping: 0.1,
+        delegateTo: document,
+        speed: 0.2,
+        overscrollDamping: 0.1,
+        overscrollEffect: "glow",
+      });
 
-    bodyScrollBar.setPosition(0, 0);
-    bodyScrollBar.track.xAxis.element.remove();
+      bodyScrollBar.setPosition(0, 0);
+      bodyScrollBar.track.xAxis.element.remove();
 
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (arguments.length) {
-          bodyScrollBar.scrollTop = value;
-        }
-        return bodyScrollBar.scrollTop;
-      },
-    });
+      ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+          if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+          }
+          return bodyScrollBar.scrollTop;
+        },
+      });
 
-    bodyScrollBar.addListener(ScrollTrigger.update);
-    // remove fix when scrolled past last point scrolltrigger
-    const addFixedBg = () => {
-      const scrollContent = document.querySelector(".scroll-content");
-     scrollContent.classList.add("fix-scroll");
-    };
-    addFixedBg();
-    const removeFixedBg = () => {
-     const scrollContent = document.querySelector(".scroll-content");
-     scrollContent.classList.remove("fix-scroll");
-    };
+      bodyScrollBar.addListener(ScrollTrigger.update);
+      // remove fix when scrolled past last point scrolltrigger
+      const addFixedBg = () => {
+        const scrollContent = document.querySelector(".scroll-content");
+        scrollContent.classList.add("fix-scroll");
+      };
+      addFixedBg();
+      const removeFixedBg = () => {
+        const scrollContent = document.querySelector(".scroll-content");
+        scrollContent.classList.remove("fix-scroll");
+      };
 
-    gsap.registerPlugin("ScrollTrigger");
-    ScrollTrigger.create({
-      trigger: "#container",
-      scrub: 1,
-      pin: true,
-      start: "top top",
-      end: "+=18000",
-      toggleActions: "restart pause resume pause",
-      onEnterBack: () => addFixedBg(),
-      onLeave: () => removeFixedBg(),
-      onLeaveBack: () => removeFixedBg(),
-    });
+      gsap.registerPlugin("ScrollTrigger");
+      ScrollTrigger.create({
+        trigger: "#container",
+        scrub: 1,
+        pin: true,
+        start: "top top",
+        end: "+=18000",
+        toggleActions: "restart pause resume pause",
+        onEnterBack: () => addFixedBg(),
+        onLeave: () => removeFixedBg(),
+        onLeaveBack: () => removeFixedBg(),
+      });
 
-    let scene = gsap.timeline();
+      let scene = gsap.timeline();
 
-    let part0_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 0,
-        end: 2000,
-        scrub: 1,
-      },
-    });
-    let part1_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 3000,
-        end: 4000,
-        scrub: 1,
-      },
-    });
-    let part2_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 4000,
-        end: 6000,
-        scrub: 1,
-      },
-    });
+      let part0_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 0,
+          end: 2000,
+          scrub: 1,
+        },
+      });
+      let part1_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 3000,
+          end: 4000,
+          scrub: 1,
+        },
+      });
+      let part2_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 4000,
+          end: 6000,
+          scrub: 1,
+        },
+      });
 
-    let part3_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 6000,
-        end: 8000,
-        scrub: 1,
-      },
-    });
-    let part4_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 8000,
-        end: 12000,
-        scrub: 1,
-      },
-    });
-    let part5_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 12000,
-        end: 14000,
-        scrub: 1,
-      },
-    });
-    let part6_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 14000,
-        end: 16000,
-        scrub: 1,
-      },
-    });
-    let part7_tl = gsap.timeline({
-      scrollTrigger: {
-        start: 16000,
-        end: 18000,
-        scrub: 1,
-      },
-    });
-    // TIMELINE: Part 0
-    part0_tl
-      // NEW ANIMATION
+      let part3_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 6000,
+          end: 8000,
+          scrub: 1,
+        },
+      });
+      let part4_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 8000,
+          end: 12000,
+          scrub: 1,
+        },
+      });
+      let part5_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 12000,
+          end: 14000,
+          scrub: 1,
+        },
+      });
+      let part6_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 14000,
+          end: 16000,
+          scrub: 1,
+        },
+      });
+      let part7_tl = gsap.timeline({
+        scrollTrigger: {
+          start: 16000,
+          end: 18000,
+          scrub: 1,
+        },
+      });
+      // TIMELINE: Part 0
+      part0_tl
+        // NEW ANIMATION
+        ///
+        .fromTo(
+          ".scene1",
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+          },
+          {
+            scale: 1,
+            xPercent: 0,
+            yPercent: 0,
+            duration: 0,
+          }
+        )
+        .fromTo(
+          ".scene2",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          }
+        )
+        .fromTo(
+          ".grass2",
+          {
+            yPercent: 30,
+          },
+          {
+            yPercent: -95,
+
+            ease: "sine.out",
+          }
+        )
+        .fromTo(
+          ".hero__herbs-container",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+
+            ease: "sine.out",
+          },
+          "-=0.3"
+        );
+      // TIMELINE: Part 1
+      part1_tl
+        // NEW ANIMATION
+        .fromTo(
+          ".cows-container",
+          {
+            scale: 1,
+            yPercent: 0,
+          },
+          {
+            scale: 1,
+            yPercent: 0,
+            ease: "sine.out",
+          }
+        )
+        ///
+        .fromTo(
+          ".scene1",
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+          },
+          {
+            scale: 1,
+            xPercent: 0,
+            yPercent: 0,
+            duration: 0,
+          }
+        )
+        .fromTo(
+          ".scene2",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          }
+        )
+        .fromTo(
+          ".grass2",
+          {
+            yPercent: -95,
+          },
+          {
+            yPercent: -95,
+            ease: "sine.out",
+          }
+        )
+        .fromTo(
+          ".hero__herbs-container",
+          {
+            opacity: 1,
+          },
+          {
+            opacity: 1,
+            ease: "sine.out",
+          }
+        );
+      // .fromTo(
+      //   ".grass1",
+      //   {
+      //     x: 0,
+      //     y: 0,
+      //   },
+      //   {
+      //     x: 0,
+      //     y: 500,
+
+      //     ease: "sine.out",
+      //   }
+      // )
+
+      // TIMELINE: Part 2
+      part2_tl
+        // NEW ANIMATION
+        .fromTo(
+          ".cows-container",
+          {
+            scale: 1,
+            yPercent: 0,
+          },
+          {
+            scale: 1,
+            yPercent: 0,
+            ease: "sine.out",
+          }
+        )
+        ///
+        .fromTo(
+          ".scene2",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          }
+        )
+        .fromTo(
+          ".scene1",
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+          },
+          {
+            scale: 1,
+            xPercent: 0,
+            yPercent: 0,
+          }
+        )
+        .fromTo(
+          ".grass2",
+          {
+            yPercent: -95,
+          },
+          {
+            yPercent: 30,
+
+            ease: "sine.out",
+          }
+        )
+        .fromTo(
+          ".hero__herbs-container",
+          {
+            opacity: 1,
+          },
+          {
+            opacity: 0,
+            duration: 0.2,
+            ease: "sine.out",
+          },
+          "-=0.1"
+        );
+
+      // TIMELINE: Part 3
+      part3_tl
+        // NEW ANIMATION
+        .fromTo(
+          ".cows-container",
+          {
+            scale: 1,
+            yPercent: 0,
+          },
+          {
+            scale: 1,
+            yPercent: 0,
+            ease: "sine.out",
+          }
+        )
+        ///
+        .fromTo(
+          ".scene2",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          }
+        )
+        .fromTo(
+          ".scene1",
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+          },
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+          }
+        )
+        .fromTo(
+          ".grass2",
+          {
+            yPercent: 30,
+          },
+          {
+            yPercent: 30,
+            ease: "sine.out",
+          }
+        )
+        .fromTo(
+          ".hero__herbs-container",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          }
+        );
+
+      // TIMELINE: Part 4
+      part4_tl
+        .fromTo(
+          ".scene1",
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+          },
+          {
+            scale: 5,
+            xPercent: -30,
+            yPercent: -60,
+
+            ease: "expoScale(1, 5)",
+          },
+          "-=0.5"
+        )
+        .fromTo(
+          ".scene2",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          }
+        )
+
+        // NEW ANIMATION
+        .fromTo(
+          ".cows-container",
+          {
+            scale: 1,
+            yPercent: 0,
+          },
+          {
+            scale: 3,
+            yPercent: 30,
+            ease: "expoScale(1, 3)",
+          },
+          "-=0.5"
+        );
+
       ///
-      .fromTo(
-        ".scene1",
+      // .fromTo(
+      //   ".grass1",
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     y: 200,
+      //   },
+      //   {
+      //     y: 500,
+      //     duration: 1,
+
+      //     ease: "sine.out",
+      //   }
+      // )
+
+      // TIMELINE: Part 5
+      part5_tl
+        // NEW ANIMATION
+        ///
+        .fromTo(
+          ".scene1",
+          {
+            scale: 5,
+            xPercent: -30,
+            yPercent: -60,
+          },
+          {
+            scale: 27.09,
+            yPercent: -448.9,
+            xPercent: -129.1,
+            ease: "expoScale(5, 27.09)",
+          }
+        )
+        .fromTo(
+          ".scene2",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 0,
+          },
+          "-=0.3"
+        );
+      part6_tl.fromTo(
+        ".scene2",
         {
           scale: 1,
           yPercent: 0,
           xPercent: 0,
+          opacity: 0,
         },
         {
           scale: 1,
-          xPercent: 0,
           yPercent: 0,
+          xPercent: 0,
+          opacity: 1,
           duration: 0,
-        }
-      )
-      .fromTo(
-        ".scene2",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        }
-      )
-      .fromTo(
-        ".grass2",
-        {
-          yPercent: 30,
-        },
-        {
-          yPercent: -95,
-
-          ease: "sine.out",
-        }
-      )
-      .fromTo(
-        ".hero__herbs-container",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-
-          ease: "sine.out",
-        },
-        "-=0.3"
-      );
-    // TIMELINE: Part 1
-    part1_tl
-      // NEW ANIMATION
-      .fromTo(
-        ".cows-container",
-        {
-          scale: 1,
-          yPercent: 0,
-        },
-        {
-          scale: 1,
-          yPercent: 0,
-          ease: "sine.out",
-        }
-      )
-      ///
-      .fromTo(
-        ".scene1",
-        {
-          scale: 1,
-          yPercent: 0,
-          xPercent: 0,
-        },
-        {
-          scale: 1,
-          xPercent: 0,
-          yPercent: 0,
-          duration: 0,
-        }
-      )
-      .fromTo(
-        ".scene2",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        }
-      )
-      .fromTo(
-        ".grass2",
-        {
-          yPercent: -95,
-        },
-        {
-          yPercent: -95,
-          ease: "sine.out",
-        }
-      )
-      .fromTo(
-        ".hero__herbs-container",
-        {
-          opacity: 1,
-        },
-        {
-          opacity: 1,
           ease: "sine.out",
         }
       );
-    // .fromTo(
-    //   ".grass1",
-    //   {
-    //     x: 0,
-    //     y: 0,
-    //   },
-    //   {
-    //     x: 0,
-    //     y: 500,
+      part7_tl
 
-    //     ease: "sine.out",
-    //   }
-    // )
+        // NEW ANIMATION
+        ///
+        .fromTo(
+          ".scene2",
+          {
+            scale: 1,
+            yPercent: 0,
+            xPercent: 0,
+            opacity: 1,
+          },
+          {
+            scale: 14,
+            yPercent: -60,
+            xPercent: -20,
+            opacity: 1,
+            ease: "sine.out",
+          }
+        );
 
-    // TIMELINE: Part 2
-    part2_tl
-      // NEW ANIMATION
-      .fromTo(
-        ".cows-container",
-        {
-          scale: 1,
-          yPercent: 0,
-        },
-        {
-          scale: 1,
-          yPercent: 0,
-          ease: "sine.out",
-        }
-      )
-      ///
-      .fromTo(
-        ".scene2",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        }
-      )
-      .fromTo(
-        ".scene1",
-        {
-          scale: 1,
-          yPercent: 0,
-          xPercent: 0,
-        },
-        {
-          scale: 1,
-          xPercent: 0,
-          yPercent: 0,
-        }
-      )
-      .fromTo(
-        ".grass2",
-        {
-          yPercent: -95,
-        },
-        {
-          yPercent: 30,
+      // TIMELINE: Main
+      scene
 
-          ease: "sine.out",
-        }
-      )
-      .fromTo(
-        ".hero__herbs-container",
-        {
-          opacity: 1,
-        },
-        {
-          opacity: 0,
-          duration: 0.2,
-          ease: "sine.out",
-        },
-        "-=0.1"
-      );
+        .set(".grass1", { x: 0, y: 0 })
+        .set(".grass2", { x: 0, yPercent: 100 })
+        .set(".scene1", { xPercent: 0, yPercent: 0, scale: 1 })
+        .set(".scene2", { xPercent: 0, yPercent: 0, scale: 1, opacity: 0 })
+        .set(".hero__herbs-container", { opacity: 0 })
 
-    // TIMELINE: Part 3
-    part3_tl
-      // NEW ANIMATION
-      .fromTo(
-        ".cows-container",
-        {
-          scale: 1,
-          yPercent: 0,
-        },
-        {
-          scale: 1,
-          yPercent: 0,
-          ease: "sine.out",
-        }
-      )
-      ///
-      .fromTo(
-        ".scene2",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        }
-      )
-      .fromTo(
-        ".scene1",
-        {
-          scale: 1,
-          yPercent: 0,
-          xPercent: 0,
-        },
-        {
-          scale: 1,
-          yPercent: 0,
-          xPercent: 0,
-        }
-      )
-      .fromTo(
-        ".grass2",
-        {
-          yPercent: 30,
-        },
-        {
-          yPercent: 30,
-          ease: "sine.out",
-        }
-      )
-      .fromTo(
-        ".hero__herbs-container",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        }
-      );
-
-    // TIMELINE: Part 4
-    part4_tl
-      .fromTo(
-        ".scene1",
-        {
-          scale: 1,
-          yPercent: 0,
-          xPercent: 0,
-        },
-        {
-          scale: 5,
-          xPercent: -30,
-          yPercent: -60,
-
-          ease: "expoScale(1, 5)",
-        },
-        "-=0.5"
-      )
-      .fromTo(
-        ".scene2",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        }
-      )
-
-      // NEW ANIMATION
-      .fromTo(
-        ".cows-container",
-        {
-          scale: 1,
-          yPercent: 0,
-        },
-        {
-          scale: 3,
-          yPercent: 30,
-          ease: "expoScale(1, 3)",
-        },
-        "-=0.5"
-      );
-
-    ///
-    // .fromTo(
-    //   ".grass1",
-    //   {
-    //     x: 0,
-    //     opacity: 1,
-    //     y: 200,
-    //   },
-    //   {
-    //     y: 500,
-    //     duration: 1,
-
-    //     ease: "sine.out",
-    //   }
-    // )
-
-    // TIMELINE: Part 5
-    part5_tl
-      // NEW ANIMATION
-      ///
-      .fromTo(
-        ".scene1",
-        {
-          scale: 5,
-          xPercent: -30,
-          yPercent: -60,
-        },
-        {
-          scale: 27.09,
-          yPercent: -448.9,
-          xPercent: -129.1,
-          ease: "expoScale(5, 27.09)",
-        }
-      )
-      .fromTo(
-        ".scene2",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0,
-        },
-        "-=0.3"
-      );
-    part6_tl.fromTo(
-      ".scene2",
-      {
-        scale: 1,
-        yPercent: 0,
-        xPercent: 0,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        yPercent: 0,
-        xPercent: 0,
-        opacity: 1,
-        duration: 0,
-        ease: "sine.out",
-      }
-    );
-    part7_tl
-
-      // NEW ANIMATION
-      ///
-      .fromTo(
-        ".scene2",
-        {
-          scale: 1,
-          yPercent: 0,
-          xPercent: 0,
-          opacity: 1,
-        },
-        {
-          scale: 14,
-          yPercent: -60,
-          xPercent: -20,
-          opacity: 1,
-          ease: "sine.out",
-        }
-      );
-
-    // TIMELINE: Main
-    scene
-
-      .set(".grass1", { x: 0, y: 0 })
-      .set(".grass2", { x: 0, yPercent: 100 })
-      .set(".scene1", { xPercent: 0, yPercent: 0, scale: 1 })
-      .set(".scene2", { xPercent: 0, yPercent: 0, scale: 1, opacity: 0 })
-      .set(".hero__herbs-container", { opacity: 0 })
-
-      .set(".cow-5", { xPercent: 200, yPercent: 0 })
-      .add(part0_tl)
-      .add(part1_tl)
-      .add(part2_tl)
-      .add(part3_tl)
-      .add(part4_tl)
-      .add(part5_tl)
-      .add(part6_tl)
-      .add(part7_tl);
+        .set(".cow-5", { xPercent: 200, yPercent: 0 })
+        .add(part0_tl)
+        .add(part1_tl)
+        .add(part2_tl)
+        .add(part3_tl)
+        .add(part4_tl)
+        .add(part5_tl)
+        .add(part6_tl)
+        .add(part7_tl);
     },
 
     pauseScrollTrigger() {
-      ScrollTrigger.kill()
+      // ScrollTrigger.kill();
     },
     doSmth() {
-//console.log(1)
-    }
-
-
-   
+      //console.log(1)
+    },
   },
-mounted() {
-
-  this.scrollAnimation(),
-
-
-      window.addEventListener('click',function(event) {
-        if (document.querySelector('body').classList.contains('modal-open') && event.target != this.document.querySelectorAll('.modal-content')) {
-          console.log(11)
-        }
-      });
- 
-  
-
-
-  }
+  mounted() {
+    this.scrollAnimation();
+    // window.addEventListener("click", function (event) {
+    // if (
+    //   document.querySelector("body").classList.contains("modal-open") &&
+    //   event.target != this.document.querySelectorAll(".modal-content")
+    // ) {
+    // this.document
+    //   .querySelector(".scroll-content")
+    //   .classList.add("fix-scroll");
+    // this.document
+    //   .querySelector(".scrollbar-track-y")
+    //   .classList.add("d-none");
+    // }
+    // });
+  },
 };
 </script>
 <style lang="scss">
+.d-none {
+  display: none !important;
+}
 .hero-slide__btns {
   z-index: 100;
   display: flex;
@@ -1218,17 +1222,15 @@ F .hero-slide__btns {
   width: 100%;
   max-width: 100vw;
   height: 100%;
- position: fixed !important;
+  position: fixed !important;
   overflow: hidden;
 
   position: relative;
- 
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 .grass1 {
   position: absolute;
@@ -1248,9 +1250,9 @@ F .hero-slide__btns {
 .scene2 {
   position: absolute;
   z-index: 1;
- 
+
   top: 0;
- 
+
   bottom: 0;
   width: 100%;
   height: 100vh;
@@ -1318,7 +1320,7 @@ F .hero-slide__btns {
   width: 100%;
   height: 960px;
   top: 68%;
-  left:100%;
+  left: 100%;
 }
 .cow-head-cont-5 {
   position: absolute;
@@ -1350,11 +1352,11 @@ section {
   height: 100vh;
   width: 100vw;
   display: block;
-  background-color:#ccd390;
+  background-color: #ccd390;
 }
 [data-scrollbar] {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -1362,59 +1364,59 @@ body::-webkit-scrollbar {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .scroll-area {
-position: relative;
-height: 100%;
+  position: relative;
+  height: 100%;
 }
 .fix-scroll {
   position: fixed;
-transform: none !important;
+  transform: none !important;
 }
 .scrollbar-track {
-    position: absolute;
-    opacity: 0;
-    z-index: 1;
-    background: #3A0C53;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: opacity 0.5s 0.5s ease-out;
-    transition: opacity 0.5s 0.5s ease-out;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  background: #3a0c53;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.5s 0.5s ease-out;
+  transition: opacity 0.5s 0.5s ease-out;
 }
 
 .scrollbar-track.show,
 .scrollbar-track:hover {
-    opacity: 1;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
 }
 
 .scrollbar-track-x {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
 }
 
 .scrollbar-track-y {
-    top: 0;
-    right: 0;
-    width: 4px;
-    height: 100%;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
 }
 
 .scrollbar-thumb {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 0;
 }
 
 .cows-container {
@@ -1424,7 +1426,7 @@ transform: none !important;
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  position:absolute;
+  position: absolute;
   overflow: hidden;
 }
 .cow-1 {
