@@ -546,9 +546,9 @@
         />
       </div>
     </div> -->
-    <div class="next-section section-1 section"></div>
-    <div class="next-section"></div>
-    <div class="next-section"></div>
+    <div class="next-section section-1"></div>
+    <div class="next-section section"></div>
+    <div class="next-section section"></div>
 
     <ModalsHeroAbout v-on:test="doSmth" />
     <ModalsHeroDocs />
@@ -560,40 +560,76 @@ import SmoothScrollbar from "smooth-scrollbar";
 export default {
   methods: {
     scrollAnimation() {
-
-      // let bodyScrollBar = SmoothScrollbar.init(this.$el.querySelector('.hero__container'), {
-      //   damping: 0.1,
-      //   delegateTo: document,
-      // //  speed: 0.2,
-      //   overscrollDamping: 0.1,
-      //   overscrollEffect: "glow",
-      // });
+      let bodyScrollBar = SmoothScrollbar.init(document.body, {
+        damping: 0.2,
+        delegateTo: document,
+        speed: 0.2,
+        overscrollDamping: 0.1,
+        overscrollEffect: "glow",
+      });
 
       // bodyScrollBar.setPosition(0, 0);
-      // bodyScrollBar.track.xAxis.element.remove();
+      bodyScrollBar.track.xAxis.element.remove();
 
-      // ScrollTrigger.scrollerProxy(document.body, {
-      //   scrollTop(value) {
-      //     if (arguments.length) {
-      //       bodyScrollBar.scrollTop = value;
-      //     }
-      //     return bodyScrollBar.scrollTop;
-      //   },
-      // });
+      ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+          if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+          }
+          return bodyScrollBar.scrollTop;
+        },
+      });
 
-      // bodyScrollBar.addListener(ScrollTrigger.update);
+      bodyScrollBar.addListener(ScrollTrigger.update);
       // remove fix when scrolled past last point scrolltrigger
       const addFixedBg = () => {
-        //const scrollContent = document.querySelector(".scroll-content");
-      //  scrollContent.classList.add("fix-scroll");
-
-             };
+        this.$el.querySelector(".hero__container").classList.add("el--fixed");
+        const scrollContent = document.querySelector(".scroll-content");
+        scrollContent.classList.add("fix-scroll");
+      };
       addFixedBg();
 
-      const removeFixedBg = () => {
-      //  const scrollContent = document.querySelector(".scroll-content");
-      //  scrollContent.classList.remove("fix-scroll");
+      window.addEventListener("wheel", function (event) {
+        const sectionFirstTop = document
+          .querySelector(".section-1")
+          .getBoundingClientRect().top;
 
+               const sectionFirstHeight =
+         this.document.querySelector(".section-1").offsetTop;
+          
+
+
+        if (
+          event.deltaY < 0 &&
+          !document
+            .querySelector(".scroll-content")
+            .classList.contains("fix-scroll") &&
+          sectionFirstTop > 0
+        ) {
+          bodyScrollBar.scrollTo(0, 1900, 300);
+          console.log("go top");
+        } else if (
+          event.deltaY > 0 &&
+          !document
+            .querySelector(".scroll-content")
+            .classList.contains("fix-scroll") &&
+          sectionFirstTop > 0
+        ) {
+          bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
+          console.log("go bottom");
+        }
+
+        console.log(sectionFirstTop);
+      });
+      const removeFixedBg = () => {
+        this.$el
+          .querySelector(".hero__container")
+          .classList.remove("el--fixed");
+        const scrollContent = document.querySelector(".scroll-content");
+        scrollContent.classList.remove("fix-scroll");
+        const sectionFirstHeight =
+          this.$el.querySelector(".section-1").offsetTop;
+      bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
       };
 
       gsap.registerPlugin("ScrollTrigger");
@@ -601,27 +637,25 @@ export default {
         trigger: "#container",
         scrub: 1,
         pin: true,
+        pinSpacing: true,
+        once: false,
         start: "top top",
-        end: "+=1800",
+        end: "+=2500 center",
         toggleActions: "restart pause resume pause",
         onEnterBack: () => addFixedBg(),
+        onEnter: () => addFixedBg(),
         onLeave: () => removeFixedBg(),
         onLeaveBack: () => removeFixedBg(),
-        onComplete: () => {
-    if(scene.scrollTrigger) scene.scrollTrigger.kill(true);
-   scene.progress(1);
-  }
+        onUpdate: (self) => {
+          if (self.progress > 0.9) {
+            // removeFixedBg(),
+            //  this.$el.querySelector('.section-1').scrollIntoView({block: "start", behavior: "smooth"});
+            // console.log("progress:", self.progress);
+          } else {
+            addFixedBg();
+          }
+        },
       });
-      //   ScrollTrigger.create({
-      //   trigger: ".wrapper",
-      //   scrub: 1,
-
-      //   start: "top top",
-      //   end: "bottom",
-      //   toggleActions: "restart pause resume pause",
-      //   onEnterBack: () => scrollToTop(),
-
-      // });
 
       let scene = gsap.timeline();
 
@@ -1071,8 +1105,8 @@ export default {
     },
 
     pauseScrollTrigger() {
-     // ScrollTrigger.kill();
-    SmoothScrollbar.destroyAll();
+      ScrollTrigger.kill();
+      SmoothScrollbar.destroyAll();
     },
     doSmth() {
       //console.log(1)
@@ -1080,7 +1114,6 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
-
 
     // window.addEventListener("click", function (event) {
     // if (
@@ -1237,19 +1270,23 @@ export default {
 .img-absolute {
   position: absolute;
 }
+.el--fixed {
+  position: fixed !important;
+  transform: none !important;
+}
 .hero__container {
   width: 100%;
   height: 100vh !important;
   display: grid;
   place-items: center;
-  position: fixed;
+
   overflow: hidden;
 }
 .wrapper {
   width: 100%;
   max-width: 100vw;
   height: 100%;
-  position: fixed !important;
+
   overflow: hidden;
 
   position: relative;
@@ -1401,7 +1438,7 @@ body {
 .fix-scroll {
   position: fixed;
   transform: translate3d(0px, 0px, 0px) !important;
-  height: 0 !important;
+  // height: 0 !important;
 }
 .scrollbar-track {
   position: absolute;
