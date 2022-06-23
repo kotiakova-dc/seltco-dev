@@ -568,7 +568,7 @@ export default {
         overscrollEffect: "glow",
       });
 
-      // bodyScrollBar.setPosition(0, 0);
+  bodyScrollBar.setPosition(0, 0);
       bodyScrollBar.track.xAxis.element.remove();
 
       ScrollTrigger.scrollerProxy(document.body, {
@@ -606,7 +606,7 @@ export default {
             .classList.contains("fix-scroll") &&
           sectionFirstTop > 0
         ) {
-          bodyScrollBar.scrollTo(0, 1900, 300);
+          bodyScrollBar.scrollTo(0, 1500, 200);
           console.log("go top");
         } else if (
           event.deltaY > 0 &&
@@ -615,7 +615,7 @@ export default {
             .classList.contains("fix-scroll") &&
           sectionFirstTop > 0
         ) {
-          bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
+          bodyScrollBar.scrollTo(0, sectionFirstHeight, 200);
           console.log("go bottom");
         }
 
@@ -629,7 +629,7 @@ export default {
         scrollContent.classList.remove("fix-scroll");
         const sectionFirstHeight =
           this.$el.querySelector(".section-1").offsetTop;
-      bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
+     // bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
       };
 
       gsap.registerPlugin("ScrollTrigger");
