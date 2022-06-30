@@ -28,11 +28,94 @@
           >
         </div>
 
-        <img
-          :src="require('@/assets/img/hero-slider/grass2.png')"
-          alt=""
-          class="grass2 img-absolute"
-        />
+        <div class="grass-container-2">
+          <div class="grass-animated2">
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim6.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim6"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim7.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim7"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim8.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim8"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim9.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim9"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim10.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim10"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim11.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim11"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim12.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim12"
+            />
+          </div>
+
+          <img
+            :src="require('@/assets/img/hero-slider/grass3.png')"
+            alt=""
+            class="grass3 img-absolute"
+          />
+
+          <img
+            :src="require('@/assets/img/hero-slider/grass2.png')"
+            alt=""
+            class="grass2 img-absolute"
+          />
+        </div>
+
+        <div class="grass-container-1">
+          <div class="grass-animated1">
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim1.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim1"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim2.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim2"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim3.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim3"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim4.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim4"
+            />
+            <img
+              :src="require('@/assets/img/hero-slider/grass-anim5.png')"
+              alt="Травинка"
+              class="grass-anim grass-anim5"
+            />
+          </div>
+
+          <img
+            :src="require('@/assets/img/hero-slider/grass1.png')"
+            alt=""
+            class="grass1 img-absolute"
+          />
+        </div>
+
         <div class="cows-container">
           <div class="cow-1">
             <img
@@ -189,368 +272,6 @@
       </div>
     </div>
 
-    <!--
-        <div class="cows-container">
-          <div class="cow-1">
-            <img
-              :src="require('@/assets/img/hero-slider/cow-body-1.png')"
-              alt="Корова"
-              class="cow-body-1 img-absolute"
-            />
-
-            <img
-              :src="require('@/assets/img/hero-slider/cow-tail-1.png')"
-              alt="Корова"
-              class="cow-tail-1 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-head-1.png/')"
-              alt="Корова"
-              class="cow-head-1 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-ear-left-1.png')"
-              alt="Корова"
-              class="cow-ear-left-1 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-ear-right-1.png/')"
-              alt="Корова"
-              class="cow-ear-right-1 img-absolute"
-            />
-          </div>
-          <div class="cow-2">
-            <img
-              :src="require('@/assets/img/hero-slider/cow-body-2.png')"
-              alt="Корова"
-              class="cow-body-2 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-tail-2.png')"
-              alt="Корова"
-              class="cow-tail-2 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-leg-2.png')"
-              alt="Корова"
-              class="cow-leg-2 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-head-2.png')"
-              alt="Корова"
-              class="cow-head-2 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-ear-left-2.png')"
-              alt="Корова"
-              class="cow-ear-left-2 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-ear-right-2.png')"
-              alt="cow"
-              class="cow-ear-right-2 img-absolute"
-            />
-          </div>
-          <div class="cow-3">
-            <img
-              :src="require('@/assets/img/hero-slider/cow-body-3.png')"
-              alt="Корова"
-              class="cow-body-3 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-head-3.png')"
-              alt="Корова"
-              class="cow-head-3 img-absolute"
-            />
-          </div>
-          <div class="cow-4">
-            <img
-              :src="require('@/assets/img/hero-slider/cow-body-4.png')"
-              alt="Корова"
-              class="cow-body-4 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-head-4.png')"
-              alt="Корова"
-              class="cow-head-4 img-absolute"
-            />
-          </div>
-          <div class="cows-sm">
-            <img
-              :src="require('@/assets/img/hero-slider/cows-sm-body.png')"
-              alt="Корова"
-              class="cows-body-sm img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-sm-head1.png')"
-              alt="Корова"
-              class="cows-head-sm1 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-sm-head2.png')"
-              alt="Корова"
-              class="cows-head-sm2 img-absolute"
-            />
-          </div>
-        </div>
-        <div class="grass-animated1">
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim1.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim1"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim2.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim2"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim3.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim3"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim4.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim4"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim5.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim5"
-          />
-        </div>
-
-        <div class="grass-container-2">
-          <div class="grass-animated2">
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim6.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim6"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim7.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim7"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim8.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim8"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim9.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim9"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim10.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim10"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim11.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim11"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim12.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim12"
-            />
-          </div>
-
-          <img
-            :src="require('@/assets/img/hero-slider/grass3.png')"
-            alt=""
-            class="grass3 img-absolute"
-          />
-
-          <img
-            :src="require('@/assets/img/hero-slider/grass2.png')"
-            alt=""
-            class="grass2 img-absolute"
-          />
-        </div>
-
-        <img
-          :src="require('@/assets/img/hero-slider/grass1.png')"
-          alt=""
-          class="grass1 img-absolute"
-        />
-      </div>
-      <div class="hero-slide" id="slide02">
-        <div class="hero__overlay"></div>
-
-        <div class="grass-animated1">
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim1.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim1"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim2.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim2"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim3.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim3"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim4.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim4"
-          />
-          <img
-            :src="require('@/assets/img/hero-slider/grass-anim5.png')"
-            alt="Травинка"
-            class="grass-anim grass-anim5"
-          />
-        </div>
-
-        <div class="grass-container-2">
-          <div class="grass-animated2">
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim6.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim6"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim7.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim7"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim8.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim8"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim9.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim9"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim10.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim10"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim11.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim11"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/grass-anim12.png')"
-              alt="Травинка"
-              class="grass-anim grass-anim12"
-            />
-          </div>
-
-          <img
-            :src="require('@/assets/img/hero-slider/grass3.png')"
-            alt=""
-            class="grass3 img-absolute"
-          />
-
-          <img
-            :src="require('@/assets/img/hero-slider/grass2.png')"
-            alt=""
-            class="grass2 img-absolute"
-          />
-        </div>
-
-        <img
-          :src="require('@/assets/img/hero-slider/grass1.png')"
-          alt=""
-          class="grass1 img-absolute"
-        />
-
-        <div class="hero__herbs-container">
-          <span class="hero__herb-img"
-            ><img
-              :src="require('@/assets/img/hero-slider/hero-herb1.png')"
-              alt="Луговые травы"
-              class="hero__herb hero__herb1"
-          /></span>
-          <span class="hero__herb-img">
-            <img
-              :src="require('@/assets/img/hero-slider/hero-herb2.png')"
-              alt="Луговые травы"
-              class="hero__herb hero__herb2"
-            />
-          </span>
-
-          <span class="hero__herb-img">
-            <img
-              :src="require('@/assets/img/hero-slider/hero-herb3.png')"
-              alt="Луговые травы"
-              class="hero__herb hero__herb3"
-            />
-          </span>
-          <span class="hero__herb-img">
-            <img
-              :src="require('@/assets/img/hero-slider/hero-herb4.png')"
-              alt="Луговые травы"
-              class="hero__herb hero__herb4"
-            />
-          </span>
-          <span class="hero__herb-img herb-circle--animated">
-            <img
-              :src="require('@/assets/img/hero-slider/hero-herb5.png')"
-              alt="Луговые травы"
-              class="hero__herb hero__herb5"
-            />
-          </span>
-        </div>
-      </div>
-      <div class="hero-slide" id="slide03">
-        <div class="cow-5">
-          <div class="cow-head-cont-5">
-            <img
-              :src="require('@/assets/img/hero-slider/cow-head-5.png')"
-              alt="Корова"
-              class="cow-head-5 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-ear-left-5.png')"
-              alt="Корова"
-              class="cow-ear-left-5 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-ear-right-5.png')"
-              alt="Корова"
-              class="cow-ear-right-5 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-eyes-5.png')"
-              alt="Корова"
-              class="cow-eyes-5 img-absolute"
-            />
-            <img
-              :src="require('@/assets/img/hero-slider/cow-eyes-close-5.png')"
-              alt="Корова"
-              class="cow-eyes-5 cow-eyes-close-5 img-absolute"
-            />
-          </div>
-          <img
-            :src="require('@/assets/img/hero-slider/cow-body-5.png')"
-            alt="cow"
-            class="cow-body-5 img-absolute"
-          />
-        </div>
-      </div>
-      <div class="hero-slide" id="slide04"></div>
-      <div class="hero-slide" id="slide05">
-        <img
-          :src="require('@/assets/img/hero-slider/scene5.png')"
-          alt=""
-          class="scene3 img-absolute"
-        />
-      </div>
-    </div> -->
     <div class="next-section section-1"></div>
     <div class="next-section section"></div>
     <div class="next-section section"></div>
@@ -572,13 +293,480 @@ export default {
   props: ["modalShow"],
   mounted() {
     this.mainScroll();
+    const cowOneAnimation = new TimelineMax({ repeat: -1 });
+    const cowTwoAnimation = new TimelineMax({ repeat: -1 });
+    const cowThreeAnimation = new TimelineMax({ repeat: -1 });
+    const cowFourAnimation = new TimelineMax({ repeat: -1 });
+    const cowSmAnimation = new TimelineMax({ repeat: -1 });
+    const cowFiveAnimation = new TimelineMax({ repeat: -1 });
+
+    cowOneAnimation
+      // head
+      .to(".cow-head-1", 2, {
+        rotation: -30,
+      })
+      .to(".cow-head-1", 2, {
+        rotation: 0,
+        delay: 2,
+      })
+      .to(
+        ".cow-tail-1",
+        2,
+        {
+          rotation: 45,
+          transformOrigin: "left top",
+        },
+        "-=4"
+      )
+      //left ear
+      .to(
+        ".cow-ear-left-1",
+        3,
+        {
+          rotation: -40,
+          y: 30,
+          x: 7,
+          transformOrigin: "left bottom",
+        },
+        "-=6"
+      )
+      .to(
+        ".cow-ear-left-1",
+        3,
+        {
+          rotation: 0,
+          y: 0,
+          x: 0,
+        },
+        "-=2"
+      )
+      // right ear
+      .to(
+        ".cow-ear-right-1",
+        3,
+        {
+          rotation: -30,
+
+          transformOrigin: "left bottom",
+        },
+        "-=7"
+      )
+      .to(
+        ".cow-ear-right-1",
+        3,
+        {
+          rotation: 0,
+
+          transformOrigin: "left bottom",
+        },
+        "-=3"
+      )
+      // tail
+      .to(
+        ".cow-tail-1",
+        2,
+        {
+          rotation: 0,
+          transformOrigin: "left top",
+        },
+        "-=3"
+      );
+
+    cowTwoAnimation
+
+      .to(".cow-leg-2", 2, {
+        rotation: -27,
+        y: 7,
+        x: 2,
+        //delay: 4,
+        transformOrigin: "left top",
+      })
+      .to(".cow-leg-2", 0.5, {
+        rotation: 0,
+        y: 0,
+        x: 0,
+      })
+      .to(".cow-head-2", 2, {
+        rotation: 10,
+        x: 10,
+        transformOrigin: "top top",
+      })
+      .to(
+        ".cow-ear-left-2",
+        2,
+        {
+          rotation: 15,
+
+          transformOrigin: "right bottom",
+        },
+        "-=2"
+      )
+      .to(
+        ".cow-ear-right-2",
+        2,
+        {
+          rotation: -5,
+          x: 2,
+          y: -2,
+
+          transformOrigin: "left bottom",
+        },
+        "-=2"
+      )
+      .to(
+        ".cow-head-2",
+        2,
+        {
+          rotation: 0,
+          x: 0,
+          delay: 5,
+        },
+        "-=4"
+      )
+      .to(".cow-ear-left-2", 2, {
+        rotation: 0,
+        delay: 4,
+      })
+      .to(
+        ".cow-ear-right-2",
+        2,
+        {
+          rotation: 0,
+          x: 0,
+          y: 0,
+        },
+        "-=2"
+      )
+      .to(
+        ".cow-tail-2",
+        2,
+        {
+          rotation: 10,
+          transformOrigin: "right top",
+        },
+        "-=2"
+      )
+      .to(".cow-tail-2", 2, {
+        rotation: 0,
+        transformOrigin: "right top",
+      });
+
+    cowThreeAnimation
+      .to(".cow-head-3", 1, {
+        rotation: 20,
+        x: 18,
+        y: 5,
+        delay: 1.5,
+        transformOrigin: "right top",
+      })
+      .to(".cow-head-3", 1, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+        delay: 3,
+        transformOrigin: "right top",
+      });
+
+    cowFourAnimation
+      .to(".cow-head-4", 1, {
+        rotation: -30,
+        x: -14,
+        y: 5,
+        delay: 3,
+        transformOrigin: "left top",
+      })
+      .to(".cow-head-4", 1, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+        delay: 1,
+      });
+
+    cowSmAnimation
+
+      .to(".cows-head-sm1", 1, {
+        rotation: -10,
+        x: -3,
+        //delay: 3,
+        transformOrigin: "left top",
+      })
+      .to(".cows-head-sm1", 1, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+      })
+      .to(
+        ".cows-head-sm2",
+        1,
+        {
+          rotation: -2,
+          x: -2,
+          y: -1,
+          //delay: 3,
+          transformOrigin: "right top",
+        },
+        "-=1.9"
+      )
+      .to(".cows-head-sm2", 1, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+        //delay: 1,
+      });
+    cowFiveAnimation
+
+      .to(".cow-head-cont-5", 1, {
+        rotation: -35,
+        y: 43,
+        transformOrigin: "right top",
+        delay: 3,
+      })
+
+      .to(
+        ".cow-ear-right-5",
+        0.5,
+        {
+          rotation: 35,
+          y: -23,
+          x: -30,
+          transformOrigin: "left bottom",
+          delay: 2,
+        },
+        "-=0.4"
+      )
+      .to(
+        ".cow-ear-left-5",
+        0.5,
+        {
+          rotation: -30,
+          y: -43,
+          transformOrigin: "right bottom",
+        },
+        "-=0.4"
+      )
+      .to(".cow-eyes-5", 0.2, {
+        opacity: 0,
+      })
+      .to(
+        ".cow-eyes-close-5",
+        {
+          opacity: 1,
+        },
+        "-=0.1"
+      )
+      .to(".cow-eyes-5", {
+        opacity: 1,
+      })
+      .to(".cow-eyes-close-5", {
+        opacity: 0,
+      })
+
+      .to(
+        ".cow-ear-right-5",
+        0.2,
+        {
+          rotation: 0,
+          y: 0,
+          x: 0,
+          transformOrigin: "left bottom",
+        },
+        "-=0.2"
+      )
+      .to(
+        ".cow-ear-left-5",
+        0.2,
+        {
+          rotation: 0,
+          y: 0,
+          transformOrigin: "right bottom",
+        },
+        "-=0.2"
+      )
+      .to(
+        ".cow-head-cont-5",
+        0.5,
+        {
+          rotation: 0,
+          y: 0,
+          delay: 1,
+        },
+        "-=1.3"
+      );
+
+    ///////////////
+    const grassAnimated1 = new TimelineMax({ repeat: -1 });
+    const grassAnimated2 = new TimelineMax({ repeat: -1 });
+    const grassAnimated3 = new TimelineMax({ repeat: -1 });
+    const grassAnimated4 = new TimelineMax({ repeat: -1 });
+    const grassAnimated5 = new TimelineMax({ repeat: -1 });
+    const grassAnimated6 = new TimelineMax({ repeat: -1 });
+    const grassAnimated7 = new TimelineMax({ repeat: -1 });
+    const grassAnimated8 = new TimelineMax({ repeat: -1 });
+    const grassAnimated9 = new TimelineMax({ repeat: -1 });
+    const grassAnimated10 = new TimelineMax({ repeat: -1 });
+    const grassAnimated11 = new TimelineMax({ repeat: -1 });
+    const grassAnimated12 = new TimelineMax({ repeat: -1 });
+
+    grassAnimated1
+      .to(".grass-anim1", 4, {
+        rotation: -10,
+        x: -14,
+        y: 5,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim1", 4, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+      });
+
+    grassAnimated2
+      .to(".grass-anim2", 6, {
+        rotation: 20,
+        x: -14,
+        y: 5,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim2", 6, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+      });
+
+    grassAnimated3
+      .to(".grass-anim3", 6, {
+        rotation: 20,
+        x: -14,
+        y: 5,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim3", 6, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+      });
+
+    grassAnimated4
+      .to(".grass-anim4", 6, {
+        rotation: -10,
+        x: -14,
+        y: 5,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim4", 6, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+      });
+
+    grassAnimated5
+      .to(".grass-anim5", 6, {
+        rotation: -7,
+        x: -14,
+        y: 5,
+        delay: 2,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim5", 6, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+      });
+
+    grassAnimated6
+      .to(".grass-anim6", 7, {
+        rotation: 6,
+
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim6", 7, {
+        rotation: 0,
+      });
+    grassAnimated7
+      .to(".grass-anim7", 9, {
+        rotation: -10,
+        x: -14,
+        y: 5,
+        delay: 0.7,
+
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim7", 9, {
+        rotation: 0,
+        x: 0,
+        y: 0,
+        delay: 0.7,
+      });
+    grassAnimated8
+      .to(".grass-anim8", 8, {
+        rotation: 4,
+        delay: 0.3,
+
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim8", 8, {
+        rotation: 0,
+        delay: 0.3,
+      });
+    grassAnimated9
+      .to(".grass-anim9", 7, {
+        rotation: -3,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim9", 7, {
+        rotation: 0,
+      });
+    grassAnimated10
+      .to(".grass-anim10", 7, {
+        rotation: 4,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim10", 7, {
+        rotation: 0,
+      });
+    grassAnimated11
+      .to(".grass-anim11", 10, {
+        rotation: -6,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim11", 10, {
+        rotation: 0,
+      });
+    grassAnimated12
+      .to(".grass-anim12", 5, {
+        rotation: 10,
+        transformOrigin: "bottom",
+      })
+      .to(".grass-anim12", 5, {
+        rotation: 0,
+      });
+
+    //////////////
+    const herbCircleAnimation = new TimelineMax({ repeat: -1 });
+    herbCircleAnimation
+
+      .to(".herb-circle--animated", 0.6, {
+        background: "#CCD390",
+        border: "6px solid #fff",
+        ease: "power1.out",
+      })
+      .to(".herb-circle--animated", 0.6, {
+        background: "#31264F",
+        border: "10px solid #fff",
+        ease: "power1.out",
+      })
+      .to(".herb-circle--animated", 0.6, {
+        background: "#CCD390",
+        border: "6px solid #fff",
+        ease: "power1.out",
+      });
   },
   methods: {
     function() {
       //  this.mainScroll;
     },
     pauseScrollTrigger() {
-      console.log(111);
+      Scrollbar.get(document.body).updatePluginOptions("modal", { open: true });
     },
 
     mainScroll() {
@@ -597,7 +785,7 @@ export default {
       Scrollbar.use(ModalPlugin);
 
       let bodyScrollBar = Scrollbar.init(document.body, {
-        damping: 0.3,
+        damping: 0.1,
         delegateTo: document,
         speed: 0.1,
         thumbMinSize: 50,
@@ -607,7 +795,6 @@ export default {
         },
       });
 
-      bodyScrollBar.setPosition(0, 0);
       bodyScrollBar.track.xAxis.element.remove();
 
       ScrollTrigger.scrollerProxy(document.body, {
@@ -641,7 +828,7 @@ export default {
               .querySelector(".scroll-content")
               .classList.contains("fix-scroll")
           ) {
-            bodyScrollBar.scrollTo(0, sectionHeroHeight, 300);
+            bodyScrollBar.scrollTo(0, 24000, 300);
             console.log("go top");
           } else if (event.deltaY > 0) {
             console.log("go bottom");
@@ -681,7 +868,8 @@ export default {
           .querySelector(".modal-close")
           .addEventListener("click", function () {
             bodyScrollBar.updatePluginOptions("modal", { open: false });
-            console.log(bodyScrollBar.offset);
+
+            console.log(11111111111111111111111111);
           });
       }
 
@@ -689,7 +877,7 @@ export default {
         .querySelector(".hero-slide__btn")
         .addEventListener("click", function () {
           {
-            bodyScrollBar.updatePluginOptions("modal", { open: true });
+            // bodyScrollBar.updatePluginOptions("modal", { open: true });
             // console.log(bodyScrollBar.offset);
           }
         });
@@ -818,7 +1006,26 @@ export default {
       // TIMELINE: Part 0
       part0_tl
         // NEW ANIMATION
-        ///
+        .fromTo(
+          ".hero__text",
+          {
+            yPercent: 0,
+          },
+          {
+            yPercent: 600,
+            ease: "sine.out",
+          }
+        )
+        .fromTo(
+          ".grass-container-1",
+          {
+            y: 0,
+          },
+          {
+            y: 500,
+            ease: "sine.out",
+          }
+        )
         .fromTo(
           ".scene1",
           {
@@ -843,12 +1050,12 @@ export default {
           }
         )
         .fromTo(
-          ".grass2",
+          ".grass-container-2",
           {
-            yPercent: 30,
+            y: 820,
           },
           {
-            yPercent: -95,
+            y: -420,
 
             ease: "sine.out",
           }
@@ -905,13 +1112,12 @@ export default {
           }
         )
         .fromTo(
-          ".grass2",
+          ".grass-container-2",
           {
-            yPercent: -95,
+            y: -420,
           },
           {
-            yPercent: -95,
-            ease: "sine.out",
+            y: -420,
           }
         )
         .fromTo(
@@ -977,12 +1183,12 @@ export default {
           }
         )
         .fromTo(
-          ".grass2",
+          ".grass-container-2",
           {
-            yPercent: -95,
+            y: -420,
           },
           {
-            yPercent: 30,
+            y: 820,
 
             ease: "sine.out",
           }
@@ -1039,12 +1245,13 @@ export default {
           }
         )
         .fromTo(
-          ".grass2",
+          ".grass-container-2",
           {
-            yPercent: 30,
+            y: 820,
           },
           {
-            yPercent: 30,
+            y: 820,
+
             ease: "sine.out",
           }
         )
@@ -1073,8 +1280,7 @@ export default {
             yPercent: -60,
 
             ease: "expoScale(1, 5)",
-          },
-          "-=0.5"
+          }
         )
         .fromTo(
           ".scene2",
@@ -1095,27 +1301,11 @@ export default {
           },
           {
             scale: 3,
-            yPercent: 30,
+            yPercent: 40,
             ease: "expoScale(1, 3)",
           },
-          "-=0.5"
+          "-=1"
         );
-
-      ///
-      // .fromTo(
-      //   ".grass1",
-      //   {
-      //     x: 0,
-      //     opacity: 1,
-      //     y: 200,
-      //   },
-      //   {
-      //     y: 500,
-      //     duration: 1,
-
-      //     ease: "sine.out",
-      //   }
-      // )
 
       // TIMELINE: Part 5
       part5_tl
@@ -1181,13 +1371,21 @@ export default {
             opacity: 1,
             ease: "sine.out",
           }
+        )
+        .fromTo(
+          ".hero-slide__btns",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          }
         );
-
       // TIMELINE: Main
       scene
 
-        .set(".grass1", { x: 0, y: 0 })
-        .set(".grass2", { x: 0, yPercent: 100 })
+        //  .set(".grass1", { x: 0, y: 0 })
+        //  .set(".grass2", { x: 0, yPercent: 100 })
         .set(".scene1", { xPercent: 0, yPercent: 0, scale: 1 })
         .set(".scene2", { xPercent: 0, yPercent: 0, scale: 1, opacity: 0 })
         .set(".hero__herbs-container", { opacity: 0 })
@@ -1221,7 +1419,6 @@ export default {
       this.$root.$emit("bv::hide::modal", "hero-modal-about");
       // this.testt;
       this.mainScroll();
-      console.log(this.bodyScrollBar.offset);
     },
   },
 };
@@ -1230,7 +1427,7 @@ export default {
 .hero__text {
   display: flex;
   flex-direction: column;
-  z-index: 101;
+  z-index: 90;
   position: absolute;
   top: 10vw;
 }
@@ -1416,7 +1613,7 @@ export default {
   position: absolute;
   z-index: 10;
   width: 100vw;
-  bottom: 0;
+  bottom: -20px;
 }
 .grass2 {
   position: absolute;
@@ -1424,20 +1621,24 @@ export default {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  bottom: -100%;
+}
+.grass3 {
+  z-index: 120;
+  top: 24vw;
 }
 .scene1,
-.scene2 {
+.scene2,
+.scene3 {
   position: absolute;
   z-index: 1;
 
   top: 0;
 
   bottom: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: 57% 50%;
+  width: 100vw;
+  height: 100%;
+  // object-fit: cover;
+  // object-position: 57% 50%;
 }
 /* slide 2 */
 .hero__herbs-container {
@@ -1765,5 +1966,78 @@ body {
   top: 16px;
   right: 35px;
   z-index: 101;
+}
+.grass-animated1 {
+  position: absolute;
+  bottom: 9vw;
+  z-index: 92;
+  width: 100vw;
+}
+.grass-animated2 {
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  width: 100vw;
+}
+.grass-container-2 {
+  position: absolute;
+
+  z-index: 99;
+  width: 100vw;
+}
+.grass-container-1 {
+  position: absolute;
+  bottom: 0px;
+  z-index: 99;
+  width: 100vw;
+}
+
+.grass-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grass-anim1 {
+  left: 60px;
+}
+.grass-anim2 {
+  left: 41%;
+}
+.grass-anim3 {
+  left: 8%;
+}
+.grass-anim4 {
+  left: 85%;
+}
+.grass-anim5 {
+  left: 70%;
+}
+.grass-anim6 {
+  left: 5%;
+  bottom: 116px;
+}
+.grass-anim7 {
+  left: 76%;
+  bottom: 131px;
+}
+.grass-anim8 {
+  left: 57%;
+  bottom: 0px;
+}
+.grass-anim9 {
+  left: 84%;
+  bottom: 44px;
+}
+.grass-anim10 {
+  left: 87%;
+  bottom: 56px;
+}
+.grass-anim11 {
+  left: 1%;
+  bottom: 294px;
+}
+.grass-anim12 {
+  left: 22%;
+  bottom: 52px;
 }
 </style>
