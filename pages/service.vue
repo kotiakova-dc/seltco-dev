@@ -33,9 +33,7 @@
             </li>
           </ul>
         </div>
-        <div class="service__img">
-          <img :src="require(`@/assets/img/service.jpg`)" alt="img" />
-        </div>
+        <div class="service__img"></div>
       </div>
     </div>
   </div>

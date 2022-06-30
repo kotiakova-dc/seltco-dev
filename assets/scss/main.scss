@@ -8,6 +8,7 @@
 @import "forms";
 html {
   height: 100%;
+
   &.locked,
   &.scroll-locked,
   Î &.locked body {
@@ -17,7 +18,7 @@ html {
 
 body {
   font-family: "Gerbera";
-  font-weight: 300;
+  scroll-behavior: smooth;
   background-color: white;
   color: $black;
   cursor: default;
@@ -92,9 +93,6 @@ h4 {
 }
 p {
   line-height: 1.3em;
-  &:not(:last-child) {
-    padding-bottom: 10px;
-  }
 }
 
 // UI
@@ -116,10 +114,12 @@ p {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  &:hover,&:active,&:focus {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: #ffffffb8;
     border: none;
     outline: none;
     color: inherit;
-}
+  }
 }

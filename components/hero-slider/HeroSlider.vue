@@ -2,6 +2,11 @@
   <div>
     <div class="hero__container section" id="container">
       <div class="wrapper" id="wrapper">
+        <div class="hero__text">
+          <h1 class="hero__title">СЕЛЬЦО</h1>
+          <h2 class="hero__sub-title">Дом счастливых коров</h2>
+        </div>
+
         <div class="hero-slide__btns">
           <b-button
             @click="pauseScrollTrigger"
@@ -556,19 +561,53 @@
   </div>
 </template>
 <script>
-import SmoothScrollbar from "smooth-scrollbar";
+import Scrollbar, { ScrollbarPlugin, ModalPlugin } from "smooth-scrollbar";
+
 export default {
+  data() {
+    return {
+      bodyScrollBar: null,
+    };
+  },
+  props: ["modalShow"],
+  mounted() {
+    this.mainScroll();
+  },
   methods: {
-    scrollAnimation() {
-      let bodyScrollBar = SmoothScrollbar.init(document.body, {
-        damping: 0.2,
+    function() {
+      //  this.mainScroll;
+    },
+    pauseScrollTrigger() {
+      console.log(111);
+    },
+
+    mainScroll() {
+      // init Scrollbar
+      class ModalPlugin extends ScrollbarPlugin {
+        static pluginName = "modal";
+
+        static defaultOptions = {
+          open: false,
+        };
+
+        transformDelta(delta) {
+          return this.options.open ? { x: 0, y: 0 } : delta;
+        }
+      }
+      Scrollbar.use(ModalPlugin);
+
+      let bodyScrollBar = Scrollbar.init(document.body, {
+        damping: 0.3,
         delegateTo: document,
-        speed: 0.2,
-        overscrollDamping: 0.1,
+        speed: 0.1,
+        thumbMinSize: 50,
         overscrollEffect: "glow",
+        plugins: {
+          modal: true,
+        },
       });
 
-  bodyScrollBar.setPosition(0, 0);
+      bodyScrollBar.setPosition(0, 0);
       bodyScrollBar.track.xAxis.element.remove();
 
       ScrollTrigger.scrollerProxy(document.body, {
@@ -581,56 +620,116 @@ export default {
       });
 
       bodyScrollBar.addListener(ScrollTrigger.update);
+      bodyScrollBar.updatePluginOptions("modal", { open: false });
       // remove fix when scrolled past last point scrolltrigger
+
+      const scrollSection = () => {
+        window.addEventListener("wheel", function (event) {
+          const sectionFirstTop = document
+            .querySelector(".section-1")
+            .getBoundingClientRect().top;
+
+          const sectionFirstHeight =
+            document.querySelector(".section-1").offsetTop;
+
+          const sectionHeroHeight =
+            document.querySelector(".hero__container").offsetHeight;
+
+          if (
+            event.deltaY < 0 &&
+            !document
+              .querySelector(".scroll-content")
+              .classList.contains("fix-scroll")
+          ) {
+            bodyScrollBar.scrollTo(0, sectionHeroHeight, 300);
+            console.log("go top");
+          } else if (event.deltaY > 0) {
+            console.log("go bottom");
+          }
+          //  console.log(sectionFirstTop);
+        });
+      };
+      const scrollDownHero = () => {
+        const sectionFirstHeight =
+          document.querySelector(".section-1").offsetTop;
+        bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
+      };
+
       const addFixedBg = () => {
         this.$el.querySelector(".hero__container").classList.add("el--fixed");
         const scrollContent = document.querySelector(".scroll-content");
         scrollContent.classList.add("fix-scroll");
+
+        scrollSection();
       };
       addFixedBg();
 
-      window.addEventListener("wheel", function (event) {
-        const sectionFirstTop = document
-          .querySelector(".section-1")
-          .getBoundingClientRect().top;
-
-               const sectionFirstHeight =
-         this.document.querySelector(".section-1").offsetTop;
-          
-
-
-        if (
-          event.deltaY < 0 &&
-          !document
-            .querySelector(".scroll-content")
-            .classList.contains("fix-scroll") &&
-          sectionFirstTop > 0
-        ) {
-          bodyScrollBar.scrollTo(0, 1500, 200);
-          console.log("go top");
-        } else if (
-          event.deltaY > 0 &&
-          !document
-            .querySelector(".scroll-content")
-            .classList.contains("fix-scroll") &&
-          sectionFirstTop > 0
-        ) {
-          bodyScrollBar.scrollTo(0, sectionFirstHeight, 200);
-          console.log("go bottom");
-        }
-
-        console.log(sectionFirstTop);
-      });
       const removeFixedBg = () => {
+        // scrollSection();
         this.$el
           .querySelector(".hero__container")
           .classList.remove("el--fixed");
         const scrollContent = document.querySelector(".scroll-content");
         scrollContent.classList.remove("fix-scroll");
-        const sectionFirstHeight =
-          this.$el.querySelector(".section-1").offsetTop;
-     // bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
+
+        scrollDownHero();
+        // bodyScrollBar.scrollTo(0, sectionFirstHeight, 300);
       };
+
+      if (document.querySelector("body").classList.contains("modal-open")) {
+        document
+          .querySelector(".modal-close")
+          .addEventListener("click", function () {
+            bodyScrollBar.updatePluginOptions("modal", { open: false });
+            console.log(bodyScrollBar.offset);
+          });
+      }
+
+      this.$el
+        .querySelector(".hero-slide__btn")
+        .addEventListener("click", function () {
+          {
+            bodyScrollBar.updatePluginOptions("modal", { open: true });
+            // console.log(bodyScrollBar.offset);
+          }
+        });
+
+      // const scrollSection = () => {
+      //   window.addEventListener("wheel", function (event) {
+      //     const sectionFirstTop = document
+      //       .querySelector(".hero__container")
+      //       .getBoundingClientRect().top;
+
+      //     const sectionFirstHeight =
+      //       this.document.querySelector(".section-1").offsetTop;
+
+      //     const sectionHeroHeight =
+      //       this.document.querySelector(".hero__container").clientTop;
+      //     //  console.log(sectionFirstTop);
+
+      //     if (
+      //       event.deltaY < 0 &&
+      //       !document
+      //         .querySelector(".scroll-content")
+      //         .classList.contains("fix-scroll")
+      //     ) {
+      //       //bodyScrollBar.scrollTo(0, 1500, 200);
+
+      //       console.log("go top");
+      //     } else if (
+      //       event.deltaY > 0 &&
+      //       !document
+      //         .querySelector(".scroll-content")
+      //         .classList.contains("fix-scroll") &&
+      //       sectionFirstTop < 0
+      //     ) {
+      //       //  bodyScrollBar.scrollTo(0, 6000, 200);
+      //       console.log(sectionFirstTop);
+      //       console.log("go bottom");
+      //     }
+      //     //  console.log(sectionFirstTop);
+      //   });
+      // };
 
       gsap.registerPlugin("ScrollTrigger");
       ScrollTrigger.create({
@@ -640,7 +739,7 @@ export default {
         pinSpacing: true,
         once: false,
         start: "top top",
-        end: "+=2500 center",
+        end: "+=25000 center",
         toggleActions: "restart pause resume pause",
         onEnterBack: () => addFixedBg(),
         onEnter: () => addFixedBg(),
@@ -648,8 +747,8 @@ export default {
         onLeaveBack: () => removeFixedBg(),
         onUpdate: (self) => {
           if (self.progress > 0.9) {
-            // removeFixedBg(),
-            //  this.$el.querySelector('.section-1').scrollIntoView({block: "start", behavior: "smooth"});
+            //removeFixedBg();
+            // bodyScrollBar.scrollTo(0, 5000, 200);
             // console.log("progress:", self.progress);
           } else {
             addFixedBg();
@@ -662,57 +761,57 @@ export default {
       let part0_tl = gsap.timeline({
         scrollTrigger: {
           start: 0,
-          end: 200,
+          end: 3000,
           scrub: 1,
         },
       });
       let part1_tl = gsap.timeline({
         scrollTrigger: {
-          start: 300,
-          end: 400,
+          start: 3000,
+          end: 6000,
           scrub: 1,
         },
       });
       let part2_tl = gsap.timeline({
         scrollTrigger: {
-          start: 400,
-          end: 600,
+          start: 6000,
+          end: 9000,
           scrub: 1,
         },
       });
 
       let part3_tl = gsap.timeline({
         scrollTrigger: {
-          start: 600,
-          end: 800,
+          start: 9000,
+          end: 12000,
           scrub: 1,
         },
       });
       let part4_tl = gsap.timeline({
         scrollTrigger: {
-          start: 800,
-          end: 1200,
+          start: 12000,
+          end: 15000,
           scrub: 1,
         },
       });
       let part5_tl = gsap.timeline({
         scrollTrigger: {
-          start: 1200,
-          end: 1400,
+          start: 15000,
+          end: 18000,
           scrub: 1,
         },
       });
       let part6_tl = gsap.timeline({
         scrollTrigger: {
-          start: 1400,
-          end: 1600,
+          start: 18000,
+          end: 21000,
           scrub: 1,
         },
       });
       let part7_tl = gsap.timeline({
         scrollTrigger: {
-          start: 1600,
-          end: 1800,
+          start: 21000,
+          end: 24000,
           scrub: 1,
         },
       });
@@ -1102,36 +1201,53 @@ export default {
         .add(part5_tl)
         .add(part6_tl)
         .add(part7_tl);
-    },
 
-    pauseScrollTrigger() {
-      ScrollTrigger.kill();
-      SmoothScrollbar.destroyAll();
+      // window.addEventListener("click", function (event) {
+      // if (
+      //   document.querySelector("body").classList.contains("modal-open") &&
+      //   event.target != this.document.querySelectorAll(".modal-content")
+      // ) {
+      // this.document
+      //   .querySelector(".scroll-content")
+      //   .classList.add("fix-scroll");
+      // this.document
+      //   .querySelector(".scrollbar-track-y")
+      //   .classList.add("d-none");
+      // }
+      // });
+      return this.bodyScrollBar;
     },
     doSmth() {
-      //console.log(1)
+      this.$root.$emit("bv::hide::modal", "hero-modal-about");
+      // this.testt;
+      this.mainScroll();
+      console.log(this.bodyScrollBar.offset);
     },
-  },
-  mounted() {
-    this.scrollAnimation();
-
-    // window.addEventListener("click", function (event) {
-    // if (
-    //   document.querySelector("body").classList.contains("modal-open") &&
-    //   event.target != this.document.querySelectorAll(".modal-content")
-    // ) {
-    // this.document
-    //   .querySelector(".scroll-content")
-    //   .classList.add("fix-scroll");
-    // this.document
-    //   .querySelector(".scrollbar-track-y")
-    //   .classList.add("d-none");
-    // }
-    // });
   },
 };
 </script>
 <style lang="scss">
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+  position: absolute;
+  top: 10vw;
+}
+
+.hero__title,
+.hero__sub-title {
+  color: $color-primary;
+  display: block;
+  text-align: center;
+}
+.hero__title {
+  font-size: 210px;
+}
+
+.hero__sub-title {
+  font-size: 80px;
+}
 .pin-spacer {
   overflow: hidden !important;
 }

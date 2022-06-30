@@ -16,15 +16,7 @@
         'wave-wrap1': $route.name === 'solutions-slug',
         'wrap-white': $route.name === 'company',
       }"
-    >
-      <img
-        :src="require(`@/assets/img/top.png`)"
-        alt="img"
-        class="wave"
-        width="1920"
-        height="640"
-      />
-    </div>
+    ></div>
 
     <div class="footer-feedback__wrap" ref="feedbackWrap">
       <div class="container d-flex justify-content-between">
@@ -32,17 +24,8 @@
           Присоединяйтесь <br />
           <span> к сотрудничеству!</span>
         </h3>
-   
       </div>
     </div>
-    <img
-      :src="require(`@/assets/img/bottom.png`)"
-      alt="img"
-      class="wave"
-      ref="afterWave"
-      width="1920"
-      height="640"
-    />
   </div>
 </template>
 <script>

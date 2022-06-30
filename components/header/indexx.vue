@@ -1,7 +1,10 @@
 <template>
-  <header class="header" :class="{ 'header--hidden': !showHeader, [`header--view-${view}`]: true }">
-    <HeaderTop/>
-    <HeaderBottom/>
+  <header
+    class="header"
+    :class="{ 'header--hidden': !showHeader, [`header--view-${view}`]: true }"
+  >
+    <HeaderTop />
+    <HeaderBottom />
   </header>
 </template>
 
@@ -9,8 +12,7 @@
 export default {
   props: {
     view: String,
-    default: () => 'default',
- 
+    default: () => "default",
   },
   data() {
     return {
@@ -20,12 +22,10 @@ export default {
   },
   computed: {
     isDesktop() {
-      return this.$mq === "xl" || this.$mq === "xl2"
-    }
+      return this.$mq === "xl" || this.$mq === "xl2";
+    },
   },
-  methods: {
-   
-  },
+  methods: {},
   mounted() {
     // На главной странице отключаем показ/скрытие при скролле
     window.addEventListener("scroll", this.onScroll);
@@ -35,27 +35,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.header {
-  padding: 25px 0 20px;
-  background-color: #fff;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 20;
-  transition: transform 0.8s ease-in-out;
-position: relative;
-
-  @media (max-width: 860px) {
-    box-shadow: 0px 1px 6px 0px #00000029;
-  }
-  @media (max-width: map-get($grid-breakpoints, 'md')) {
-    padding: 10px 0;
-  }
-
-  &--hidden {
-    transform: translateY(-300px);
-    transition: transform 0.8s ease-in-out;
-  }
-}
-</style>
+<style lang="scss"></style>

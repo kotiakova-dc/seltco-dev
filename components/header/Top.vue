@@ -1,24 +1,42 @@
 <template>
-  <div class="container">
-    <div class="header-top">
-      <a href="/" class="header-top__logo"><svgicon name="logo" /></a>
-      <div class="header-top__search">
-        <input
-          class="header-top__search-input"
-          type="search"
-          placeholder="Поиск"
-        />
-        <svgicon class="header-top__search-icon" name="search" />
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">
+        <img :src="require('@/assets/img/main-logo.svg')" alt="Logo"
+      /></a>
+      <div class="header__btns">
+        <b-button class="header__modal-btn" v-b-modal.hero-modal-about
+          >О ферме</b-button
+        >
+        <b-button class="header__modal-btn" v-b-modal.hero-modal-about
+          >Документы</b-button
+        >
+        <b-button class="header__modal-btn" v-b-modal.hero-modal-about
+          >Новости</b-button
+        >
       </div>
-      <div class="header-top__info">
-        <a class="info-tel" href="tel:+74995770006">+7(499) 577-00-06 </a>
-        <a href="mailto:info@petexpert.pro">info@petexpert.pro</a>
-        <button class="header-top__feedback" v-b-modal.modal-header>
-          Обратная связь
-        </button>
-      </div>
+      <ul class="header__info">
+        <li>
+          <span class="header__ic">
+            <img
+              :src="require('@/assets/img/icons/address_ic.svg')"
+              alt="Address"
+          /></span>
+          <p class="header__address">
+            Санкт-Петербург, Спасский пер., дом 14/35, офис 1204
+          </p>
+        </li>
+        <li>
+          <span class="header__ic">
+            <img :src="require('@/assets/img/icons/phone_ic.svg')" alt="Phone"
+          /></span>
+          <a class="header__tel" href="tel:+78127010471"
+            ><span>8 812</span> <span class="p-uppercase"> 701 04 71</span>
+          </a>
+        </li>
+      </ul>
     </div>
-  </div>
+  </header>
 </template>
 <script>
 export default {
@@ -29,93 +47,77 @@ export default {
 };
 </script>
 <style lang="scss">
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header {
+  position: absolute;
   margin-bottom: 25px;
+  top: 0;
+  left: 0;
+  height: 70px;
+  z-index: 101;
+  background: transparent;
+  width: 100%;
   &__logo {
-    margin-right: 20px;
-    svg {
-      height: 33px;
-      @media (max-width: map-get($grid-breakpoints, "md")) {
-        height: 25px;
-      }
+    margin-right: 120px;
+  }
+  &__container {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    a,
+    p {
+      white-space: nowrap;
+      color: $color-primary;
     }
   }
-  &__search {
-    border-radius: 1px;
-    flex: 0 1 320px;
-    position: relative;
-    margin-right: 20px;
-    &-input {
-      width: 100%;
-      background: $lightGrey;
-      padding: 10px 12px;
-      &::placeholder {
-        color: $grey;
-        font-weight: 300;
+
+  &__btns {
+    display: flex;
+    align-items: center;
+
+    .header__modal-btn {
+      background: transparent;
+      padding: 0;
+      border: none;
+      font-size: 20px;
+      color: $color-primary;
+      font-weight: 400;
+      &:not(:last-of-type) {
+        padding-right: 40px;
       }
-    }
-    &-icon {
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      top: 10px;
-      right: 12px;
-      cursor: pointer;
-    }
-    @media (max-width: 991px) {
-      display: none;
     }
   }
   &__info {
-    color: $primary;
     display: flex;
     align-items: center;
+  }
+}
+.header__info {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  li {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 17px;
+    }
     a {
-      margin-right: 30px;
-      white-space: nowrap;
-      font-weight: 500;
-      &:not(:first-child) {
-        font-weight: 300;
-        @media (max-width: 520px) {
-          display: none;
-        }
-      }
-      @media (max-width: map-get($grid-breakpoints, "md")) {
-        font-size: 14px;
-      }
-      @media (max-width: 400px) {
-        margin-right: 10px;
-        font-size: 13px;
-      }
+      font-size: 20px;
     }
-    @media (max-width: 991px) {
-      margin-left: auto;
+    .p-uppercase {
+      font-size: 30px;
     }
-  }
-  &__feedback {
-    background: linear-gradient(271.8deg, #1b2ac9 -0.56%, #0073f0 100.44%);
-    border-radius: 44px;
-    font-weight: 300;
-    color: #fff;
-    padding: 11px 26px 12px;
-    white-space: nowrap;
-    transition: 0.3 ease-out;
-    @media (max-width: map-get($grid-breakpoints, "md")) {
-      display: none;
+
+    .header__ic {
+      margin-right: 10px;
     }
-    &:hover {
-      background: $primary;
-      transition: 0.3 ease-out;
+    &:not(:last-of-type) {
+      margin-right: 40px;
     }
-  }
-  @media (max-width: 991px) {
-    margin-bottom: 5px;
-  }
-  @media (max-width: map-get($grid-breakpoints, "md")) {
-    margin-bottom: 0px;
   }
 }
 </style>

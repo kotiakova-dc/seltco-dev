@@ -30,7 +30,7 @@
 }
 .concept-banner {
   position: relative;
-  background: url("~/assets/img/banner-concept.jpg") top right no-repeat;
+  // background: url("~/assets/img/banner-concept.jpg") top right no-repeat;
   background-size: cover;
   height: 930px;
   display: flex;

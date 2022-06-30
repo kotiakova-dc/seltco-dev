@@ -1,3 +1,3 @@
-import Vue from 'vue'
-import SmoothScrollbar from 'smooth-scrollbar'
-Vue.use(SmoothScrollbar)
+import Vue from "vue";
+import Scrollbar, { ScrollbarPlugin, ModalPlugin } from "smooth-scrollbar";
+Vue.use(Scrollbar, { ScrollbarPlugin, ModalPlugin });

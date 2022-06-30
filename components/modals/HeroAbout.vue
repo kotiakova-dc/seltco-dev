@@ -1,7 +1,10 @@
 <template>
   <div>
-    <b-modal id="hero-modal-about" title="О ферме" >
-      <b-container @click="$emit('test')">
+    <b-modal id="hero-modal-about" title="О ферме" v-model="modalShow">
+      <b-container>
+        <b-button @click="$emit('test')" class="modal-close"
+          >CLOSE USING THIS BUTTON</b-button
+        >
         <b-row>
           <b-col cols="12">
             <div
@@ -16,9 +19,8 @@
               >
                 <b-col cols="1"
                   ><h4>{{ el.date }}</h4>
-                  </b-col
-                >
-                <b-col cols="9" >
+                </b-col>
+                <b-col cols="9">
                   <h4>{{ el.title }}</h4>
                   <p>{{ el.text }}</p>
                 </b-col>
@@ -45,6 +47,8 @@
 export default {
   data() {
     return {
+      modalShow: false,
+
       history: [
         {
           id: "item1",
@@ -115,12 +119,11 @@ export default {
       ],
     };
   },
-   methods: {
+  methods: {
     submit() {
-      this.$emit('submit')
-    }
-  }
-  
+      this.$emit("submit");
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -145,7 +148,7 @@ export default {
 }
 .row {
   flex-wrap: nowrap !important;
-  justify-content:unset;
+  justify-content: unset;
 }
 .list-group-item-action {
   color: $color-primary;
@@ -156,5 +159,3 @@ export default {
   height: 100%;
 }
 </style>
-
-

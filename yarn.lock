@@ -2239,7 +2239,7 @@
   "resolved" "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz"
   "version" "1.5.1"
 
-"bezier-easing@^2.0.3":
+"bezier-easing@^2.0.3", "bezier-easing@^2.1.0":
   "integrity" "sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY="
   "resolved" "https://registry.npmjs.org/bezier-easing/-/bezier-easing-2.1.0.tgz"
   "version" "2.1.0"
@@ -2258,6 +2258,11 @@
   "integrity" "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA=="
   "resolved" "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   "version" "2.2.0"
+
+"bindall-standalone@^1.0.5":
+  "integrity" "sha512-HDI7YBWXVJk/eoGz+e4lYQQJnYp1ZHcUvAY71lVptLMhQnDm86vD73AGPw2qIlgYR3P0bjmoAcXiA8qhFejBhA=="
+  "resolved" "https://registry.npmjs.org/bindall-standalone/-/bindall-standalone-1.0.5.tgz"
+  "version" "1.0.5"
 
 "bluebird@^3.1.1", "bluebird@^3.5.5":
   "integrity" "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="
@@ -5154,6 +5159,11 @@
   dependencies:
     "invert-kv" "^2.0.0"
 
+"lethargy@^1.0.2":
+  "integrity" "sha512-nFM8blpCF9rqIL5mRAaTGc78W8oQixVtsD86jbEPvcI13+lDUYJf3R7DZQQL7tCiBpbGpGKMX2gwJFO9hiaOkg=="
+  "resolved" "https://registry.npmjs.org/lethargy/-/lethargy-1.0.9.tgz"
+  "version" "1.0.9"
+
 "loader-runner@^2.4.0":
   "integrity" "sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw=="
   "resolved" "https://registry.npmjs.org/loader-runner/-/loader-runner-2.4.0.tgz"
@@ -5214,6 +5224,15 @@
   "version" "5.0.0"
   dependencies:
     "p-locate" "^4.1.0"
+
+"locomotive-scroll@^4.1.4":
+  "integrity" "sha512-6i98cFF2SKg6wIPpwVPuo2FG8qL3USsdDeew78TEYZyLoqleMWNfkSDpWA6mPym4dOfTIBXc678VmGlkgx3fTA=="
+  "resolved" "https://registry.npmjs.org/locomotive-scroll/-/locomotive-scroll-4.1.4.tgz"
+  "version" "4.1.4"
+  dependencies:
+    "bezier-easing" "^2.1.0"
+    "smoothscroll-polyfill" "^0.4.4"
+    "virtual-scroll" "^1.5.2"
 
 "lodash-es@^4.17.21":
   "integrity" "sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw=="
@@ -8199,6 +8218,11 @@
   "resolved" "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz"
   "version" "0.3.0"
 
+"tiny-emitter@^1.0.0":
+  "integrity" "sha512-rWjF00inHeWtT5UbQYAXoMI4hL6TRMqohuKCsODyPYYmfAxqfMnXLsIeNrbdPEkNxlk++rojVilTnI9IVmEBtA=="
+  "resolved" "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-1.2.0.tgz"
+  "version" "1.2.0"
+
 "tmp@^0.0.33":
   "integrity" "sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw=="
   "resolved" "https://registry.npmjs.org/tmp/-/tmp-0.0.33.tgz"
@@ -8525,6 +8549,16 @@
   "integrity" "sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w=="
   "resolved" "https://registry.npmjs.org/vendors/-/vendors-1.0.4.tgz"
   "version" "1.0.4"
+
+"virtual-scroll@^1.5.2":
+  "integrity" "sha512-7jDHwlKbHUho7CYU/HojE/VKFH8GV9P5fVWP2HCa7dRUOpVvwl93OBOKIIcb2mKd+vqsbVR/0zl0X70+3sUZqA=="
+  "resolved" "https://registry.npmjs.org/virtual-scroll/-/virtual-scroll-1.5.2.tgz"
+  "version" "1.5.2"
+  dependencies:
+    "bindall-standalone" "^1.0.5"
+    "lethargy" "^1.0.2"
+    "object-assign" "^4.0.1"
+    "tiny-emitter" "^1.0.0"
 
 "vm-browserify@^1.0.1":
   "integrity" "sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ=="
