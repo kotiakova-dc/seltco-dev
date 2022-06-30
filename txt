@@ -1,0 +1,448 @@
+<template>
+  <div>
+   
+ 
+
+  <b-modal id="hero-modal-about" title="О ферме" >
+    <ul class="modal-nav">
+          <li class="modal-link"><a href="#sec-1" v-smooth-scroll>Section 1</a></li>
+              <li class="modal-link"><a href="#sec-2" v-smooth-scroll>Section 2</a></li>
+      <li class="modal-link"><a href="#sec-3" v-smooth-scroll>Section 3</a></li>
+    </ul>
+
+    <ul class="modal-list">
+    <section id="sec-1">CONTENT 1</section>
+
+<section id="sec-2">CONTENT 2 </section>
+<section id="sec-3">CONTENT 3</section>
+    </ul>
+
+
+
+
+  </b-modal>
+
+  </div>
+</template>
+
+<script>
+
+export default {
+  
+  
+};
+</script>
+<style lang="scss" scoped>
+section {
+  height: 600px;
+  width: 200px;
+}
+#sec-1 {
+  background: rgb(133, 59, 59);
+}
+#sec-2 {
+  background: rgb(30, 73, 81);
+}
+#sec-3 {
+  background: rgb(140, 167, 143);
+}
+.modal-nav {
+background: #eee;
+}
+.modal-link {
+  font-size: 40px;
+}
+
+p {
+  font-weight: 400;
+font-size: 13px;
+line-height: 20px;
+   color: $color-primary;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<template>
+  <div>
+    <b-modal id="hero-modal-news" title="О ферме">
+      <b-card no-body>
+      
+
+        <b-card-body
+          id="nav-scroller"
+          ref="content"
+          style="position: relative; height: 300px; overflow-y: scroll"
+        >
+
+        <ul>
+          <li v-for="el in history" :key="el.date"v-bind:id="el.date">
+                <h4 >@fat</h4>
+            
+            {{el.info}}</li>
+        </ul>
+          <p>{{ text }}</p>
+          <h4 id="fat">@fat</h4>
+          <p v-for="i in 3">{{ text }}</p>
+          <h4 id="mdo">@mdo</h4>
+          <p v-for="i in 3">{{ text }}</p>
+          <h4 id="one">one</h4>
+          <p v-for="i in 2">{{ text }}</p>
+          <h4 id="two">two</h4>
+          <p>{{ text }}</p>
+          <h4 id="three">three</h4>
+          <p v-for="i in 2">{{ text }}</p>
+          <h4 id="pi0">@pi0</h4>
+          <p v-for="i in 3">{{ text }}</p>
+        </b-card-body>  <b-nav pills card-header slot="header" v-b-scrollspy:nav-scroller>
+          <ul>
+            <li v-for="el in history" :key="el.date"><b-nav-item :href="`#${el.date}`" @click="scrollIntoView">{{el.date}}</b-nav-item></li>
+          </ul>
+          <b-nav-item href="#fat" @click="scrollIntoView">@fat</b-nav-item>
+          <!-- <b-nav-item href="#mdo" @click="scrollIntoView">@mdo</b-nav-item>
+          <b-nav-item-dropdown text="Dropdown 1,2,3" right-alignment>
+            <b-dropdown-item href="#one" @click="scrollIntoView"
+              >one</b-dropdown-item
+            >
+            <b-dropdown-item href="#two" @click="scrollIntoView"
+              >two</b-dropdown-item
+            >
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-item href="#three" @click="scrollIntoView"
+              >three</b-dropdown-item
+            >
+          </b-nav-item-dropdown>
+          <b-nav-item href="#pi0" @click="scrollIntoView">@pi0</b-nav-item> -->
+        </b-nav>
+      </b-card>
+    </b-modal>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    // Convenience method to scroll a heading into view.
+    // Not required for scrollspy to work
+    scrollIntoView(event) {
+      event.preventDefault();
+      const href = event.target.getAttribute("href");
+      const el = href ? document.querySelector(href) : null;
+      if (el) {
+        this.$refs.content.scrollTop = el.offsetTop;
+      }
+    },
+  },
+  data() {
+    return {
+       history: [
+        {
+          date: '2022272',
+          title: "Наши дни",
+          info: "Предприятие вводит в эксплуотацию собственный высокотехнологичный молокоперерабатывающий завод «Молочная Культура», расположенный в 5-минутной удалённости от фермы. Здание построенного завода находится в бывшей усадьбе Н. И. Корфа восстановленной и признанной памятником архитектуры. ",
+        },
+        {
+          date:' 20222',
+          title: "Наши дни",
+          info: "Предприятие вводит в эксплуотацию собственный высокотехнологичный молокоперерабатывающий завод «Молочная Культура», расположенный в 5-минутной удалённости от фермы. Здание построенного завода находится в бывшей усадьбе Н. И. Корфа восстановленной и признанной памятником архитектуры. ",
+        },
+        {
+          date: '22022',
+          title: "Наши дни",
+          info: "Предприятие вводит в эксплуотацию собственный высокотехнологичный молокоперерабатывающий завод «Молочная Культура», расположенный в 5-минутной удалённости от фермы. Здание построенного завода находится в бывшей усадьбе Н. И. Корфа восстановленной и признанной памятником архитектуры. ",
+        },
+      ],
+      text: `
+          Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla
+          tempor. Laborum consequat non elit enim exercitation cillum aliqua
+          consequat id aliqua. Esse ex consectetur mollit voluptate est in duis
+          laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam
+          Lorem aliqua quis ullamco deserunt sit enim elit aliqua esse irure. Laborum
+          nisi sit est tempor laborum mollit labore officia laborum excepteur
+          commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur
+          ipsum commodo tempor sunt in proident.
+        `,
+    };
+  },
+};
+</script>
+<style lang="scss" scoped>
+.side-bar {
+  width: 160px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  font-weight: 400;
+  transition: all ease-out 250ms;
+  transform: rotate(270deg);
+  padding: 35px;
+}
+
+nav li a:hover {
+  color: lime;
+}
+
+.main-content {
+  margin-left: 160px;
+}
+
+section {
+  background-color: #f2f2f2;
+  height: 90vh;
+  margin: 0;
+  padding: 2.5rem 4rem;
+}
+
+
+p {
+  font-weight: 400;
+font-size: 13px;
+line-height: 20px;
+   color: $color-primary;
+}
+
+</style>
+
+
+/////////////////// NEWS modal<template>
+  <div>
+    <b-modal id="hero-modal-news" title="Новости">
+      <b-container>
+        <b-row>
+          <b-col cols="12">
+            <div
+              id="listgroup-ex"
+              style="position: relative; overflow-y: auto; height: 300px"
+            >
+              <b-row>
+                <b-col cols="1"><h4 id="year-1">2021</h4></b-col>
+
+                <b-col cols="9"
+                  ><ul>
+                    <li class="list-item" v-for="el in y2021" :key="el.id">
+                      <h4>{{ el.title }}</h4>
+                      <a href="#" class="news-more">Подробнее</a>
+                    </li>
+                  </ul></b-col
+                >
+              </b-row>
+
+             <b-row>
+                <b-col cols="1"><h4 id="year-1">2020</h4></b-col>
+
+                <b-col cols="9"
+                  ><ul>
+                    <li class="list-item" v-for="el in y2020" :key="el.id">
+                      <h4>{{ el.title }}</h4>
+                      <a href="#" class="news-more">Подробнее</a>
+                    </li>
+                  </ul></b-col
+                >
+              </b-row>
+             <b-row>
+                <b-col cols="1"><h4 id="year-1">2019</h4></b-col>
+
+                <b-col cols="9"
+                  ><ul>
+                    <li class="list-item" v-for="el in y2019" :key="el.id">
+                      <h4>{{ el.title }}</h4>
+                      <a href="#" class="news-more">Подробнее</a>
+                    </li>
+                  </ul></b-col
+                >
+              </b-row>
+              
+              <h4 id="year-4">2018</h4>
+             
+              <h4 id="year-5">2017</h4>
+             
+            </div>
+          </b-col>
+          <b-col cols="1">
+            <b-list-group v-b-scrollspy:listgroup-ex>
+              <b-list-group-item href="#year-1">2021</b-list-group-item>
+              <b-list-group-item href="#year-2">2020</b-list-group-item>
+              <b-list-group-item href="#year-3">2019</b-list-group-item>
+              <b-list-group-item href="#year-4">2018</b-list-group-item>
+              <b-list-group-item href="#year-5">2017</b-list-group-item>
+            </b-list-group>
+          </b-col>
+        </b-row>
+      </b-container>
+    </b-modal>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      y2021: [
+        {
+          id: "event1",
+          title: `ОТЧЕТ об итогах голосования`,
+          link: "",
+        },
+        {
+          id: "event2",
+          title: `Сообщение о проведении внеочередного общего собрания акционеров АО Сельцо 23 декабря 2021 г.`,
+          link: "",
+        },
+        {
+          id: "event3",
+          title: `Отчет об итогах голосования на годовом собрании акционеров АО Сельцо 28.06.2021 г`,
+          link: "",
+        },
+        {
+          id: "event4",
+          title: `Сообщение о проведении годового общего собрания акционеров АО Сельцо в 2021 году`,
+          link: "",
+        },
+        {
+          id: "event5",
+          title: `Отчет об итогах голосования на внеочередном общем собрании акционеров АО «Сельцо» 09.03.2021 г.`,
+          link: "",
+        },
+        {
+          id: "event6",
+          title: `Проведение внеочередного общего собрания акционеров АО «Сельцо» 09.03.2021г.`,
+          link: "",
+        },
+      ],
+      y2020: [
+        {
+          id: "event1",
+          title: `ОТЧЕТ об итогах голосования`,
+          link: "",
+        },
+        {
+          id: "event2",
+          title: `Сообщение о проведении внеочередного общего собрания акционеров АО Сельцо 23 декабря 2021 г.`,
+          link: "",
+        },
+        {
+          id: "event3",
+          title: `Отчет об итогах голосования на годовом собрании акционеров АО Сельцо 28.06.2021 г`,
+          link: "",
+        },
+        {
+          id: "event4",
+          title: `Сообщение о проведении годового общего собрания акционеров АО Сельцо в 2021 году`,
+          link: "",
+        },
+        {
+          id: "event5",
+          title: `Отчет об итогах голосования на внеочередном общем собрании акционеров АО «Сельцо» 09.03.2021 г.`,
+          link: "",
+        },
+        {
+          id: "event6",
+          title: `Проведение внеочередного общего собрания акционеров АО «Сельцо» 09.03.2021г.`,
+          link: "",
+        },
+      ],
+      y2019: [
+        {
+          id: "event1",
+          title: `ОТЧЕТ об итогах голосования`,
+          link: "",
+        },
+        {
+          id: "event2",
+          title: `Сообщение о проведении внеочередного общего собрания акционеров АО Сельцо 23 декабря 2021 г.`,
+          link: "",
+        },
+        {
+          id: "event3",
+          title: `Отчет об итогах голосования на годовом собрании акционеров АО Сельцо 28.06.2021 г`,
+          link: "",
+        },
+        {
+          id: "event4",
+          title: `Сообщение о проведении годового общего собрания акционеров АО Сельцо в 2021 году`,
+          link: "",
+        },
+        {
+          id: "event5",
+          title: `Отчет об итогах голосования на внеочередном общем собрании акционеров АО «Сельцо» 09.03.2021 г.`,
+          link: "",
+        },
+        {
+          id: "event6",
+          title: `Проведение внеочередного общего собрания акционеров АО «Сельцо» 09.03.2021г.`,
+          link: "",
+        },
+      ],
+    };
+  },
+};
+</script>
+<style lang="scss" scoped>
+.news-more {
+  color: $color-tertiary;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.col-10,
+.modal-body,
+.col-12,
+.col-1 {
+  padding: 0 !important;
+  h4 {
+    font-size: 20px;
+    color: $color-primary;
+  }
+}
+.list-item {
+  margin-bottom: 50px;
+  h4,
+  p {
+    font-size: 20px;
+    color: $color-primary;
+  }
+}
+.row {
+  flex-wrap: nowrap !important;
+  justify-content: unset;
+}
+.list-group-item-action {
+  color: $color-primary;
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+#listgroup-ex {
+  height: 100%;
+}
+</style>
+
+

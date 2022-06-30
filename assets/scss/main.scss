@@ -61,14 +61,14 @@ main {
 
   overflow-y: clip;
 }
-.container {
-  max-width: 1290px;
-  padding: 0 15px;
-  margin: 0 auto;
-  @media (max-width: 400px) {
-    padding: 0 10px;
-  }
-}
+// .container {
+//   max-width: 1290px;
+//   padding: 0 15px;
+//   margin: 0 auto;
+//   @media (max-width: 400px) {
+//     padding: 0 10px;
+//   }
+// }
 $color-primary: #31264f;
 $color-secondary: #ccd390;
 $color-tertiary: #f8f8f8;
@@ -116,4 +116,10 @@ p {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
+  &:hover,&:active,&:focus {
+    background-color: #ffffffb8;
+    border: none;
+    outline: none;
+    color: inherit;
+}
 }
